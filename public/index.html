@@ -15,7 +15,13 @@
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!-- 
+      Replacing the default link to manifest.json, because it doesn't work correctly
+      when I build it an deploy it on now/zeit. 
+      Instead of this: <link rel="manifest" href="%PUBLIC_URL%/manifest.json" /> 
+      I'll use this: 
+    -->
+    <link rel="manifest" href="manifest.json" />
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
