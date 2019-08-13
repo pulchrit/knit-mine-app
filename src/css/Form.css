@@ -1,0 +1,54 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 400px;
+    margin: 0 auto 5% auto;
+}
+
+.subhead {
+  margin: 4% 0 2% 0;
+}
+  
+label {
+    margin-top: 20px;
+}
+
+label, input, textarea {
+  width: 100%;
+  text-align: left;
+}
+
+input, textarea {
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    font-size: 1em;
+    line-height: 1.4;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.button a:link,
+.button a:visited,
+.button a:focus,
+.button a:hover,
+.button a:active {
+  color: white;
+  text-decoration: none;
+}
+
+.button {
+  background-color: gray;
+  border-radius: 3px;
+  border: none;
+  padding: 10px;
+  margin: 0 10px;
+  color: white;
+  cursor: pointer;
+}  
+
+.button.form-buttons {
+  margin: 10% 0;
+  width: 100%;
+}

@@ -1,0 +1,23 @@
+.add-project-pattern-section {
+    text-align: right;
+    /* max-width: 600px; */
+    margin: 5% auto 0 auto;
+}
+
+.button a:link,
+.button a:visited,
+.button a:focus,
+.button a:hover,
+.button a:active {
+  color: white;
+  text-decoration: none;
+}
+
+.button {
+  background-color: gray;
+  border-radius: 3px;
+  border: none;
+  padding: 10px;
+  margin: 0 10px;
+  color: white;
+}

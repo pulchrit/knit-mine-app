@@ -1,0 +1,24 @@
+main {
+    width: 90%;
+    max-width: 1500px;
+    margin: 200px auto;
+}
+
+.intro-copy {
+    font-size: 1.5em;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    margin-bottom: 7%;
+}
+
+.subhead {
+    margin: 4% 0 2% 0;
+}
+
+.patterns-projects-preview { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}

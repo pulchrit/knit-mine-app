@@ -1,0 +1,45 @@
+.pattern-project-list-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    /* max-width: 600px; */
+    margin: 5% auto;
+    padding: 5%;
+    background-color: #efefef;
+    border-radius: 3px;
+}
+
+.thumbnail {
+    border-radius: 3px;
+    width: 100%;
+    height: 100%;
+}
+
+.list-item-subhead {
+    margin-top: 3%;
+}
+
+.list-buttons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+} 
+  
+.button a:link,
+.button a:visited,
+.button a:focus,
+.button a:hover,
+.button a:active {
+    color: white;
+    text-decoration: none;
+}
+  
+.button {
+    background-color: gray;
+    border-radius: 3px;
+    border: none;
+    padding: 10px;
+    margin: 0 10px;
+    color: white;
+} 

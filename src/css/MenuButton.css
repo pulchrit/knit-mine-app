@@ -1,0 +1,13 @@
+.menu-button {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    margin: 5px 5px 0 5px;
+    padding: 5px 10px;
+    width: 150px;
+}
+
+.caret-icon {
+    margin-right: 10px;
+    color: white;
+}

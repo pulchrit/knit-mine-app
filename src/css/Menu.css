@@ -1,0 +1,25 @@
+.menu {
+    width: 150px;
+    list-style: none;
+    padding: 0;
+    margin: 0 5px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    top: 100%;
+    /* Help with hovering the drop down: https://tinyurl.com/y4g2yxyy */
+}
+
+.menu-options {
+    text-align: left;
+    padding: 10px 5px;
+}
+
+.menu-options:nth-child(odd){
+    background-color: #565a5d;
+}
+
+.menu-options:nth-child(even){
+    background-color: #969a9d;
+}

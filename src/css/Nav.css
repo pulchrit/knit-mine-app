@@ -1,0 +1,20 @@
+.button-and-menu {
+    position: relative; 
+
+}
+
+.nav {
+    display: flex;
+    align-Items: center;
+} 
+
+.nav a {
+    margin: 0 5px;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+.nav a:hover, .nav a:focus {
+    text-decoration: underline;
+}

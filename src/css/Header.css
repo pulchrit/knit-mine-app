@@ -1,0 +1,29 @@
+.logo {
+  font-size: 2em;
+  margin-bottom: 2%;
+
+}
+.logo:link,
+.logo:visited,
+.logo:focus,
+.logo:hover,
+.logo:active {
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  width: 100%;
+  padding: 2%;
+  background-color: dimgray;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
