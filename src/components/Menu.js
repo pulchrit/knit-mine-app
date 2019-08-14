@@ -6,7 +6,9 @@ const Menu = ({menuRoutesOptions}) => {
     return (
         <ul className="menu">
             {menuRoutesOptions.map((menu, i) => 
-                <li className="menu-options" key={i}><Link to={menu.route} className="menu-option">{menu.option}</Link></li>
+                <li className="menu-options" key={i}>
+                    <Link to={menu.route} className="menu-option">{menu.option}</Link>
+                </li>
             )}
         </ul>
     )

@@ -1,6 +1,6 @@
 .logo {
   font-size: 2em;
-  margin-bottom: 2%;
+  /* margin-bottom: 2%; */
 
 }
 .logo:link,
@@ -23,7 +23,8 @@ header {
   padding: 2%;
   background-color: dimgray;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  flex-direction: row;
+  /* flex-direction: column; */
+  justify-content: space-between;
+  align-items: center;
 }

@@ -1,12 +1,37 @@
-.button-and-menu {
-    position: relative; 
-
-}
+/* burger menu based on: https://codesandbox.io/s/mq48rlj0pp */
 
 .nav {
     display: flex;
-    align-Items: center;
+    flex-direction: column;
 } 
+
+.fa-times-bars{
+    display: block;
+    align-self: flex-end;
+    font-size: 2em;
+    margin-right: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.collapsed {
+    display: none;
+}
+
+.is-expanded {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-height: 500px;
+    max-width: 100%;
+  }
+
+
+.button-and-menu {
+    position: relative; 
+    
+
+}
 
 .nav a {
     margin: 0 5px;
@@ -17,4 +42,51 @@
 
 .nav a:hover, .nav a:focus {
     text-decoration: underline;
+}
+
+@media only screen and (min-width: 670px) {
+    .fa-bars {
+        display: none;
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    } 
+
+    .collapsed {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        max-height: 500px;
+        width: 100%;
+        /* overflow: hidden; 
+        max-height: 0; */
+    }
+
+    .is-expanded {
+        
+      /*   overflow: hidden; */
+        max-height: 500px; /* approximate max height */
+        max-width: 100%;
+        
+     /*    -moz-transition-duration: 0.4s;
+        -webkit-transition-duration: 0.4s;
+        -o-transition-duration: 0.4s;
+        transition-duration: 0.4s;
+        -moz-transition-timing-function: ease-in;
+        -webkit-transition-timing-function: ease-in;
+        -o-transition-timing-function: ease-in;
+        transition-timing-function: ease-in; */
+    }
+        /* li {
+          padding: 15px 10px;
+          margin: 0px 0px;
+          width: 100%;
+        } */
+    
+    
 }

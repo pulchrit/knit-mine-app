@@ -1,5 +1,5 @@
 import React from 'react';
-import ItemDetails from './StitchItemDetails'
+import StitchItemDetails from './StitchItemDetails'
 import '../css/LandingPage.css';
 
 const LandingPage = () => {
@@ -70,8 +70,8 @@ const LandingPage = () => {
                     search for them.</p>
 
                 <section className="patterns-projects-preview">
-                    <ItemDetails data={patternExample} />
-                    <ItemDetails data={stitchExample} />
+                    <StitchItemDetails data={patternExample} />
+                    <StitchItemDetails data={stitchExample} />
                 </section>
             </section>
 
@@ -86,7 +86,7 @@ const LandingPage = () => {
 
                 <section className="patterns-projects-preview">
                     {myProjectExamples.map((project, i) => 
-                        <ItemDetails key={i} data={project} />
+                        <StitchItemDetails key={i} data={project} />
                     )}
                 </section>
             </section>

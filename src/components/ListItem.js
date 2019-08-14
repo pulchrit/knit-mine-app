@@ -1,5 +1,6 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Route, Link} from 'react-router-dom';
+//import StitchItemDetails from './StitchItemDetails'
 import "../css/ListItem.css";
 
 const ListItem = ({stitch}) => {
@@ -20,6 +21,11 @@ const ListItem = ({stitch}) => {
                     <a href={stitch.url}>View Pattern</a>
                 </button>
             </div>
+
+          {/*   <Route 
+                path={'/stitch-patterns/:id'}
+                component={StitchItemDetails}
+            /> */}
         </div>
     )
 }
