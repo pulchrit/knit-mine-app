@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAsterisk } from '@fortawesome/free-solid-svg-icons';
 import '../css/Form.css';
 
 export default class Register extends React.Component {
@@ -35,7 +37,6 @@ export default class Register extends React.Component {
 
     render() {
         return (
-            <main role="main">
                 <form 
                     className="form" 
                     onSubmit={this.handleSubmit}
@@ -43,7 +44,7 @@ export default class Register extends React.Component {
                     <h2 className="subhead">Create an account</h2>
 
                     <label htmlFor="name">
-                    Name: *
+                    Name: <FontAwesomeIcon className='fa-asterisk' icon={faAsterisk} />
                     </label>
                     <input 
                         type="text" 
@@ -55,7 +56,7 @@ export default class Register extends React.Component {
                     />
 
                     <label htmlFor="email">
-                    Email: *
+                    Email: <FontAwesomeIcon className='fa-asterisk' icon={faAsterisk} />
                     </label>
                     <input 
                         type="email" 
@@ -67,7 +68,7 @@ export default class Register extends React.Component {
                     />
                     
                     <label htmlFor="password">
-                    Password: (8 or more characters with a number and special character) *
+                    Password: (8 or more characters, one number) <FontAwesomeIcon className='fa-asterisk' icon={faAsterisk} />                     
                     </label>
                     <input 
                         type="password" 
@@ -80,8 +81,7 @@ export default class Register extends React.Component {
 
                     <button className="button form-buttons" type="submit">Register</button>
 
-      </form>
-            </main>
+                </form>
         )
     }
 }

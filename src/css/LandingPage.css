@@ -1,14 +1,20 @@
 
+.landing-page {
+    max-width: 800px;
+    margin: 0 auto;
+}
 
 .intro-copy {
     font-size: 1.5em;
     line-height: 1.5;
     letter-spacing: 1px;
-    margin-bottom: 7%;
+/*     margin-bottom: 7%;
+ */    max-width: 800px;
 }
 
-.subhead {
-    margin: 4% 0 2% 0;
+.landing-page-subhead {
+    margin: 2% 0;
+    font-family: sans-serif;
 }
 
 .patterns-projects-preview { 
@@ -17,4 +23,16 @@
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    width: 80%
+}
+
+.landing-page-li {
+    padding: 5px 0;
+}
+
+.landing-page-section {
+    background-color: #f2f3f3;
+    border-radius: 3px;
+    padding: 5px 20px;
+    margin: 20px 0;
 }

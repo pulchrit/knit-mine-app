@@ -1,31 +1,32 @@
 import React from 'react';
 import {Route, Link} from 'react-router-dom';
-//import StitchItemDetails from './StitchItemDetails'
+import PetersHat from './images/peters_hat.JPG';
 import "../css/ListItem.css";
 
-const ListItem = ({stitch}) => {
+const ListItem = ({item, itemRoute}) => {
     return (
         <div className="pattern-project-list-item">
             
-            <img src={stitch.image_url} className="thumbnail" alt={stitch.name} />
+            {itemRoute === '/my-projects'
+                ? <img src={PetersHat} className="thumbnail" alt={item.name} />
+                : <img src={item.image_url} className="thumbnail" alt={item.name} />
+            }
 
-            <h3 className="list-item-subhead">{stitch.name}</h3>
+            <h3 className="list-item-subhead">{item.name}</h3>
 
             <div className="list-buttons">
                 
                 <button className="button" type="button">
-                    <Link to={`/stitch-patterns/${stitch.id}`}>More info</Link>
+                    <Link to={`${itemRoute}/${item.id}`}>More info</Link>
                 </button> 
 
-                <button className="button" type="button">
-                    <a href={stitch.url}>View Pattern</a>
-                </button>
+                {item.url && 
+                    <button className="button" type="button">
+                        <a href={item.url}>View Pattern</a>
+                    </button>
+                }
             </div>
 
-          {/*   <Route 
-                path={'/stitch-patterns/:id'}
-                component={StitchItemDetails}
-            /> */}
         </div>
     )
 }

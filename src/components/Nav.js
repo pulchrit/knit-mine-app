@@ -50,7 +50,7 @@ export default class Nav extends React.Component {
                 {isExpanded 
                     ?   <FontAwesomeIcon 
                             className='fa-times-bars' 
-                            area-hidden={!isExpanded}
+                            aria-hidden={!isExpanded}
                             icon={faTimes}
                             tabIndex="0"
                             onClick={this.handleBurgerToggle} 
@@ -58,7 +58,7 @@ export default class Nav extends React.Component {
                         />
                     :   <FontAwesomeIcon 
                             className='fa-times-bars' 
-                            area-hidden={!isExpanded}
+                            aria-hidden={!isExpanded}
                             icon={faBars}
                             tabIndex="0"
                             onClick={this.handleBurgerToggle} 

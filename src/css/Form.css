@@ -12,7 +12,15 @@
 }
   
 label {
+    display: flex;
     margin-top: 20px;
+}
+
+.fa-asterisk {
+  color: red;
+  font-size: .7em;
+  align-self: flex-start;
+  padding-left: 3px;
 }
 
 label, input, textarea {

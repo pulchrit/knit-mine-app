@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAsterisk } from '@fortawesome/free-solid-svg-icons';
 import '../css/Form.css';
 
 export default class AddMyProject extends React.Component {
@@ -83,8 +85,7 @@ export default class AddMyProject extends React.Component {
 
     render() {
         return (
-            <main role="main">
-                
+           
                 <form 
                     className="form" 
                     onSubmit={this.handleSubmit}
@@ -93,7 +94,7 @@ export default class AddMyProject extends React.Component {
                     <h2 className="subhead">Add my project</h2>
 
                     <label htmlFor="name">
-                        Name: *
+                        Name: <FontAwesomeIcon className='fa-asterisk' icon={faAsterisk} />
                     </label>
                     <input 
                         type="text" 
@@ -211,7 +212,7 @@ export default class AddMyProject extends React.Component {
                 <button className="button form-buttons" type="submit">Add my project</button>
                 
                 </form>
-            </main>
+          
         )
     }
 }

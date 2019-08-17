@@ -31,11 +31,10 @@ export default class StitchItemDetails extends React.Component {
     
     render() {
 
-        const stitch = STITCH_PATTERNS.find(stitch => stitch.id.toString() === this.props.match.params.id) || {}
-        console.log('stitch object after find:', stitch) //return empty object
-        console.log("params.id, expect 1:", this.props.match.params.id) //string
+        const stitch = STITCH_PATTERNS.find(stitch => 
+            stitch.id.toString() === this.props.match.params.id) || this.props.stitch
+
         return (
-            <main role="main">
                 
                 <section className="details-item">
 
@@ -54,7 +53,6 @@ export default class StitchItemDetails extends React.Component {
                     </div>
                     
                 </section>
-            </main>
         )
     }
 }

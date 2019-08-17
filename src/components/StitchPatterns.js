@@ -17,14 +17,18 @@ export default class StitchPatterns extends React.Component {
     render() {
        
         return (
-            <main role="main">
+            <>
                 <AddButton 
                     name={'Add a stitch pattern'} 
                     route={'/add-stitch'} 
                 />
 
-                <ListView data={STITCH_PATTERNS} />
-            </main>
+                <ListView 
+                    data={this.state.STITCH_PATTERNS}
+                    listName='Stitch Patterns' 
+                    itemRoute='/stitch-patterns'
+                />
+            </>
         )
     }
 }

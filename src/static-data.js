@@ -89,7 +89,7 @@ const STITCH_PATTERNS = [
         name: "Horseshoe lace stitch",
         url: 'https://www.thesprucecrafts.com/learn-about-the-horseshoe-lace-2116405',
         image_url: "https://www.thesprucecrafts.com/thmb/ehoz5u7dgrNd4gNl7WrW5oKXHHI=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/horseshoe-lace-56a578015f9b58b7d0dd1297.JPG",
-        notes: "Beautifu despite the maybe not so beautiful name.",
+        notes: "Beautiful despite the maybe not so beautiful name.",
         user_id: 1
     },
 ];
@@ -98,62 +98,62 @@ const MY_PROJECTS = [
     {
         id: 1,
         name: "Peter's hat",
-        image: "https://cdn.instructables.com/F3C/8FDS/GGMMFCFS/F3C8FDSGGMMFCFS.LARGE.jpg",
+        image: "peters_hat.JPG",
         description: "A hat for Uncle Peter.",
         gift_recipient: "Uncle Peter",
         gift_occasion: "Just because",
         yarn: "Cascade Fibers, Superwash 220, Green Heather",
         needles: "US 8, circular",
-        pattern_id: 1,
-        stitch_id: [1, 3]
+        pattern_id: 5,
+        stitch_id: [1, 3, 5]
     },
     {
         id: 2,
         name: "Andrew's hat",
-        image: "https://cdn.instructables.com/F3C/8FDS/GGMMFCFS/F3C8FDSGGMMFCFS.LARGE.jpg",
+        image: "peters_hat.JPG",
         description: "A hat for husband, dear.",
         gift_recipient: "Andrew",
         gift_occasion: "Birthday 2019",
         yarn: "Malabrigo, Rio, Azul",
         needles: "US 4, circular",
-        pattern_id: 1,
-        stitch_id: [1, 3]
+        pattern_id: 4,
+        stitch_id: [2]
     },
     {
         id: 3,
         name: "Ada's hat",
-        image: "https://cdn.instructables.com/F3C/8FDS/GGMMFCFS/F3C8FDSGGMMFCFS.LARGE.jpg",
+        image: "peters_hat.JPG",
         description: "A hat for thing 1.",
         gift_recipient: "Ada",
         gift_occasion: "Holiday present 2018",
         yarn: "Cascade Fibers, Superwash 220, Carnival",
         needles: "US 7, circular",
-        pattern_id: 1,
-        stitch_id: [1, 3]
+        pattern_id: 3,
+        stitch_id: []
     },
     {
         id: 4,
         name: "Ezzie's hat",
-        image: "https://cdn.instructables.com/F3C/8FDS/GGMMFCFS/F3C8FDSGGMMFCFS.LARGE.jpg",
+        image: "peters_hat.JPG",
         description: "A hat for thing 2.",
         gift_recipient: "Ezzie",
         gift_occasion: "Holiday present 2019",
         yarn: "Cascade Fibers, Superwash 220, Purple Haze",
         needles: "US 7, circular",
         pattern_id: 1,
-        stitch_id: [1, 3]
+        stitch_id: [3, 2]
     },
     {
         id: 5,
         name: "Baby blanket for Lena and Sergey",
-        image: "https://cdn.instructables.com/F3C/8FDS/GGMMFCFS/F3C8FDSGGMMFCFS.LARGE.jpg",
+        image: "peters_hat.JPG",
         description: "Blanket for their second baby, a girl.",
         gift_recipient: "Baby Abramavich",
         gift_occasion: "birth",
         yarn: "Malabrigo, Rio, Strawberry Field",
         needles: "US 7, circular",
-        pattern_id: 1,
-        stitch_id: [1, 3]
+        pattern_id: 2,
+        stitch_id: [1, 4]
     }
 ];
 

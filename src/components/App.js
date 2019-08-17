@@ -9,6 +9,10 @@ import AddStitch from './AddStitch';
 import AddMyProject from './AddMyProject';
 import StitchPatterns from './StitchPatterns';
 import StitchItemDetails from './StitchItemDetails';
+import ProjectPatterns from './ProjectPatterns';
+import ProjectPatternItemDetails from './ProjectPatternItemDetails';
+import MyProjectPatterns from './MyProjectPatterns';
+import MyProjectPatternItemDetails from './MyProjectPatternItemDetails';
 import NotFoundPage from './NotFoundPage';
 import Footer from './Footer';
 import '../css/App.css';
@@ -17,7 +21,7 @@ export default class App extends React.Component {
   render() {
   
     return (
-      <div className="App">
+      <main className="App">
         
         <Header />
 
@@ -65,6 +69,28 @@ export default class App extends React.Component {
           />
 
           <Route 
+            exact
+            path={'/project-patterns'}
+            component={ProjectPatterns}
+          />
+
+         <Route
+            path={'/project-patterns/:id'}
+            component={ProjectPatternItemDetails}
+          />
+
+          <Route 
+            exact
+            path={'/my-projects'}
+            component={MyProjectPatterns}
+          />
+
+         <Route
+            path={'/my-projects/:id'}
+            component={MyProjectPatternItemDetails}
+          />
+
+          <Route 
             component={NotFoundPage}
           />
 
@@ -72,7 +98,7 @@ export default class App extends React.Component {
 
         <Footer />
         
-      </div>
+      </main>
     );
   }
 }

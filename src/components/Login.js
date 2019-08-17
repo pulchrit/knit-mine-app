@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAsterisk } from '@fortawesome/free-solid-svg-icons';
 import '../css/Form.css';
 
 export default class Login extends React.Component {
@@ -28,7 +30,6 @@ export default class Login extends React.Component {
 
     render() {
         return (
-            <main role="main">
                 <form 
                     className="form" 
                     onSubmit={this.handleSubmit}
@@ -36,7 +37,7 @@ export default class Login extends React.Component {
                     <h2 className="subhead">Login to your account</h2>
                     
                     <label htmlFor="email">
-                        Email: *
+                        Email: <FontAwesomeIcon className='fa-asterisk' icon={faAsterisk} />
                     </label>
                     <input 
                         type="email" 
@@ -49,7 +50,7 @@ export default class Login extends React.Component {
                     />
 
                     <label htmlFor="password">
-                        Password: * 
+                        Password: <FontAwesomeIcon className='fa-asterisk' icon={faAsterisk} />
                     </label>
                     <input 
                         type="password" 
@@ -64,7 +65,6 @@ export default class Login extends React.Component {
                     <button className="button form-buttons" type="submit">Login</button>
 
                 </form>
-            </main>
         )
     }
 }

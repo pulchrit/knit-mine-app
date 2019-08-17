@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAsterisk } from '@fortawesome/free-solid-svg-icons';
 import '../css/Form.css';
 
 export default class AddStitch extends React.Component {
@@ -41,7 +43,6 @@ export default class AddStitch extends React.Component {
 
     render() {
         return (
-            <main role="main">
 
                 <form 
                     className="form" 
@@ -50,7 +51,7 @@ export default class AddStitch extends React.Component {
                     <h2 className="subhead">Add a stitch pattern</h2>
 
                     <label htmlFor="name">
-                        Name: *
+                        Name: <FontAwesomeIcon className='fa-asterisk' icon={faAsterisk} />
                     </label>
                     <input 
                         type="text" 
@@ -63,7 +64,7 @@ export default class AddStitch extends React.Component {
                     />
 
                     <label htmlFor="url">
-                        Link/URL: *
+                        Link/URL: <FontAwesomeIcon className='fa-asterisk' icon={faAsterisk} />
                     </label>
                     <input 
                         type="url" 
@@ -103,7 +104,6 @@ export default class AddStitch extends React.Component {
                     <button className="button form-buttons" type="submit">Add stitch</button>
 
                 </form>
-            </main>
         )
     }
 }
