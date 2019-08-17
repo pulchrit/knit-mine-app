@@ -1,7 +1,6 @@
 {
     "version": 2,
     "alias": "knit-mine-app",
-    "name": "knit-mine-app",
     "routes": [
         {
             "src": "^/static/(.*)",

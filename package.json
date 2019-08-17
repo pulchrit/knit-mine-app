@@ -19,8 +19,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "now ./build",
-    "post-deploy": "now --target production -A ./build/now.json"
+    "deploy": "now --target production ./build && now rm knit-mine-app --safe --yes"
   },
   "eslintConfig": {
     "extends": "react-app"
