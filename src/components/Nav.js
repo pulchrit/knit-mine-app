@@ -71,6 +71,7 @@ export default class Nav extends React.Component {
 
                     <div className={`button-and-menu`}
                         onMouseLeave={event => this.setShowMyAccount(false)}
+                        
                     >
                         <MenuButton 
                             name="My Account"
@@ -80,6 +81,7 @@ export default class Nav extends React.Component {
 
                         {this.state.showMyAccount && 
                             <Menu 
+                                setShow={this.setShowMyAccount}
                                 menuRoutesOptions={[
                                     {
                                         route: '/login',
@@ -105,6 +107,7 @@ export default class Nav extends React.Component {
 
                         {this.state.showPatterns &&
                             <Menu 
+                                setShow={this.setShowPatterns}
                                 menuRoutesOptions={[
                                     {
                                         route: '/stitch-patterns',
@@ -138,6 +141,7 @@ export default class Nav extends React.Component {
 
                         {this.state.showMyProjects && 
                             <Menu 
+                                setShow={this.setShowMyProjects}
                                 menuRoutesOptions={[
                                     {
                                         route: '/my-projects',

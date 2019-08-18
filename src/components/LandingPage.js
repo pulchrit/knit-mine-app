@@ -57,10 +57,24 @@ const LandingPage = () => {
             <section className="landing-page-section">
                 <h2 className="landing-page-subhead">Save project and stitch patterns</h2>
 
-                <p>Having trouble finding that daisy stitch pattern or that beautiful 
+                <p>
+                    Having trouble finding that daisy stitch pattern or that beautiful 
                     lace scarf pattern in your long list of knitting bookmarks? Save 
                     those patterns here in Knit Mine and you can easily browse or 
                     search for them. 
+                </p>
+
+                <p>
+                    A project pattern contains instructions for knitting a particular 
+                    thing&mdash;like a scarf, hat, or sweater. The project pattern 
+                    lives on another website and you store reference to it in Knit Mine.
+                </p>
+
+                <p>
+                    A stitch pattern contains instructions for knitting a particular 
+                    stitch&mdash;like daisy stitch or stockinette stitch. The stitch 
+                    pattern also lives on another site and you store reference to 
+                    it in Knit Mine. 
                 </p>
 
                 <ul> 
@@ -77,7 +91,7 @@ const LandingPage = () => {
                     <li className="landing-page-li">Then you can view the {' '}
                         <Link to="/project-patterns">project patterns</Link> 
                         {' '} and <Link to="/stitch-patterns">stitch patterns</Link>
-                        you've saved.
+                        {' '} you've saved.
                     </li>
                 </ul>
 
@@ -90,11 +104,19 @@ const LandingPage = () => {
             <section className="landing-page-section">
                 <h2 className="landing-page-subhead">Save your own creations</h2>
 
-                <p>What kind of hat did you make for Jim's last birthday again? 
+                <p>
+                    What kind of hat did you make for Jim's last birthday again? 
                     You know you changed the needle size on Laura's scarf, but 
                     you can't recall what you changed it to. Find the answers and 
                     keep a record of your beautiful work by saving your projects 
                     to Knit Mine.  
+                </p>
+
+                <p>
+                    You can save information about projects you’ve made and upload 
+                    a photo of the finished piece. Include information about the 
+                    yarn, needle size, who you made it for, and which project 
+                    or stitch patterns you used.
                 </p>
                 
                     <ul>
@@ -102,8 +124,8 @@ const LandingPage = () => {
                             <Link to="/add-project">add one of your own projects</Link>.
                     </li>
 
-                    <li className="landing-page-li">Then you can view all of your {' '}
-                        <Link to="/my-projects">projects here</Link>.
+                    <li className="landing-page-li">Then you can {' '}
+                        <Link to="/my-projects">view all of your projects here</Link>.
                     </li>
                         
                         

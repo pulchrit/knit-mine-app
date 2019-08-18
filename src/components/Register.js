@@ -52,6 +52,7 @@ export default class Register extends React.Component {
                         name="name"
                         placeholder="First and last name" 
                         required 
+                        value={this.state.name}
                         onChange={this.handleChangeName}
                     />
 
@@ -64,11 +65,13 @@ export default class Register extends React.Component {
                         name="email" 
                         placeholder="your@email.com"
                         required 
+                        value={this.state.email}
                         onChange={this.handleChangeEmail}
                     />
                     
                     <label htmlFor="password">
-                    Password: (8 or more characters, one number) <FontAwesomeIcon className='fa-asterisk' icon={faAsterisk} />                     
+                    Password:  <FontAwesomeIcon className='fa-asterisk' icon={faAsterisk} /> 
+                    (8 or more characters, one number)                     
                     </label>
                     <input 
                         type="password" 
@@ -76,6 +79,7 @@ export default class Register extends React.Component {
                         name="password"
                         placeholder="your password" 
                         required 
+                        value={this.state.password}
                         onChange={this.handleChangePassword}
                     />
 

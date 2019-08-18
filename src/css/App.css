@@ -1,5 +1,10 @@
 main {
   width: 90%;
   max-width: 1500px;
-  margin: 150px auto;
+  margin: 170px auto;
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.25;
 }

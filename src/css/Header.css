@@ -1,7 +1,8 @@
 .logo {
-  font-size: 2em;
-  /* margin-bottom: 2%; */
-
+  font-size: 4em;
+  letter-spacing: 3px;
+  font-family: 'Londrina Shadow', cursive; 
+  line-height: .9;
 }
 .logo:link,
 .logo:visited,
@@ -10,7 +11,7 @@
 .logo:active {
   text-decoration: none;
   cursor: pointer;
-  color: black;
+  color: white;
 }
 
 header {
@@ -24,7 +25,8 @@ header {
   background-color: dimgray;
   display: flex;
   flex-direction: row;
-  /* flex-direction: column; */
   justify-content: space-between;
   align-items: center;
+  font-family: 'Crimson Text', serif;
+  font-size: 1.1em;
 }

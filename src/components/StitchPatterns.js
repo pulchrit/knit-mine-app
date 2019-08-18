@@ -1,6 +1,6 @@
 import React from 'react';
 import ListView from './ListView';
-import AddButton from './AddButton';
+import SearchAdd from './SearchAdd';
 import {STITCH_PATTERNS} from '../static-data';
 
 export default class StitchPatterns extends React.Component {
@@ -18,9 +18,10 @@ export default class StitchPatterns extends React.Component {
        
         return (
             <>
-                <AddButton 
+                <SearchAdd
                     name={'Add a stitch pattern'} 
                     route={'/add-stitch'} 
+                    searchCopy={'Search stitch patterns...'}
                 />
 
                 <ListView 

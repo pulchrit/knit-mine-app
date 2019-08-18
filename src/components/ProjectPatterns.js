@@ -1,6 +1,6 @@
 import React from 'react';
 import ListView from './ListView';
-import AddButton from './AddButton';
+import SearchAdd from './SearchAdd';
 import {PROJECT_PATTERNS} from '../static-data';
 
 export default class ProjectPatterns extends React.Component {
@@ -18,9 +18,10 @@ export default class ProjectPatterns extends React.Component {
        
         return (
             <>
-                <AddButton 
+                <SearchAdd 
                     name={'Add a project pattern'} 
                     route={'/add-project'} 
+                    searchCopy={'Search project patterns...'}
                 />
 
                 <ListView 

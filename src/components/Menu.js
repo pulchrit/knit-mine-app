@@ -2,12 +2,14 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import '../css/Menu.css';
 
-const Menu = ({menuRoutesOptions}) => {
+const Menu = ({setShow, menuRoutesOptions}) => {
     return (
-        <ul className="menu">
+        <ul className="menu" onClick={event => setShow(false)}>
             {menuRoutesOptions.map((menu, i) => 
                 <li className="menu-options" key={i}>
-                    <Link to={menu.route} className="menu-option">{menu.option}</Link>
+                    <Link to={menu.route} className="menu-option">
+                        {menu.option}
+                    </Link>
                 </li>
             )}
         </ul>
