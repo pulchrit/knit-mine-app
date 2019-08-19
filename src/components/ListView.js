@@ -10,7 +10,7 @@ const ListView = ({data, listName, itemRoute}) => {
         
             {data.map((item, i) => (
                 <ListItem 
-                    key={i} 
+                    key={`listItem-${i}`}
                     item={item}
                     itemRoute={itemRoute} 
                 />

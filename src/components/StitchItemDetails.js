@@ -39,7 +39,7 @@ export default class StitchItemDetails extends React.Component {
                 <section className="details-item">
 
                     <h2 className="details-subhead">{stitch.name}</h2>
-                    <a className="details-img-a" href={stitch.url}>
+                    <a className="details-img-a" target="_blank" rel="noopener noreferrer" href={stitch.url}>
                         <img src={stitch.image_url} className="thumbnail" alt={stitch.name}/>
                     </a>
 
@@ -48,7 +48,7 @@ export default class StitchItemDetails extends React.Component {
                         <p className="details-info">{stitch.notes}</p>
                         
                         <button className="button details-button" type="button">
-                            <a href={stitch.url}>View pattern</a>
+                            <a target="_blank" rel="noopener noreferrer" href={stitch.url}>View pattern</a>
                         </button> 
                     </div>
                     

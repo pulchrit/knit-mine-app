@@ -79,7 +79,7 @@ export default class MyProjectPatternItemDetails extends React.Component {
                         <h4 className="details-type">Stitches</h4>
                         <p className="details-info">
                             {stitches.map((stitch) => 
-                                <Link className="pattern-stitch-links" key={stitch.id} to={`/stitch-patterns/${stitch.id}`}>
+                                <Link className="pattern-stitch-links" key={`stitch-${stitch.id}`} to={`/stitch-patterns/${stitch.id}`}>
                                     {stitch.name}
                                 </Link> 
                             )}

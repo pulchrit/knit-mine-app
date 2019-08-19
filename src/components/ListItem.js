@@ -22,7 +22,7 @@ const ListItem = ({item, itemRoute}) => {
 
                 {item.url && 
                     <button className="button" type="button">
-                        <a href={item.url}>View Pattern</a>
+                        <a target="_blank" rel="noopener noreferrer"href={item.url}>View Pattern</a>
                     </button>
                 }
             </div>

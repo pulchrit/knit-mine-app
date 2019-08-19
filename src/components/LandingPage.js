@@ -134,7 +134,7 @@ const LandingPage = () => {
                 <section className="patterns-projects-preview">
                     {myProjectExamples.map((project, i) => 
                         <MyProjectPatternItemDetails 
-                            key={i} 
+                            key={`patternDetails-${i}`}
                             myProject={project} 
                             projectPattern={patternExample}
                             stitches={stitchExample}

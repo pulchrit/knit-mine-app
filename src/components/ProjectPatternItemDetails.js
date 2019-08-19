@@ -39,7 +39,7 @@ export default class ProjectPatternItemDetails extends React.Component {
                 <section className="details-item">
 
                     <h2 className="details-subhead">{projectPattern.name}</h2>
-                    <a className="details-img-a" href={projectPattern.url}>
+                    <a className="details-img-a" target="_blank" rel="noopener noreferrer" href={projectPattern.url}>
                         <img src={projectPattern.image_url} className="thumbnail" alt={projectPattern.name} />
                     </a>
 
@@ -54,7 +54,7 @@ export default class ProjectPatternItemDetails extends React.Component {
                         <p className="details-info">{projectPattern.needles}</p>
 
                         <button className="button details-button" type="button">
-                            <a href={projectPattern.url}>View pattern</a>
+                            <a target="_blank" rel="noopener noreferrer" href={projectPattern.url}>View pattern</a>
                         </button>
                     </div>
 
