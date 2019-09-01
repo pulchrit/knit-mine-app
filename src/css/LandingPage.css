@@ -13,6 +13,16 @@
     max-width: 800px;
 }
 
+.landing-page-button {
+    width: 40%;
+}
+
+.landing-page-button-div {
+    display: flex;
+    justify-content: center;
+    margin: 7% 0;
+}
+
 .landing-page-subhead {
     margin: 2% 0;
     font-family: 'DM Serif Text', serif;

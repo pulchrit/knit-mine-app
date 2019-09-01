@@ -1,20 +1,37 @@
 import React from 'react';
 import ListView from './ListView';
 import SearchAdd from './SearchAdd';
-import {PROJECT_PATTERNS} from '../static-data';
+import config from '../config';
+import TokenService from '../services/token-service';
 
 export default class ProjectPatterns extends React.Component {
 
     state = {
-        PROJECT_PATTERNS
+        projectPatterns: [],
+        error: null
     }
 
-    /* TO DO: Fetch, GET project patterns from DB, eventually 
-    Or should the fetch really go in the ListView??? 
-    Determine which is best when creating interactive version.
-    */
+    componentDidMount() {
+        fetch(`${config.API_ENDPOINT}/project-patterns/`, {
+            headers: {
+                'Authorization': `bearer ${TokenService.getAuthToken()}`
+            }
+        })
+        .then(res => 
+            (!res.ok)
+            ? res.json().then(error => Promise.reject(error))
+            : res.json()
+        )
+        .then(patterns => this.setState({
+            projectPatterns: patterns
+            })
+        )
+        .catch(this.setState) 
+    }
 
     render() {
+        
+        console.log('projectPatterns from state ProjectPatterns:', this.state.projectPatterns)
        
         return (
             <>
@@ -25,7 +42,7 @@ export default class ProjectPatterns extends React.Component {
                 />
 
                 <ListView 
-                    data={this.state.PROJECT_PATTERNS}
+                    data={this.state.projectPatterns}
                     listName='Project Patterns'
                     itemRoute='/project-patterns' 
                 />

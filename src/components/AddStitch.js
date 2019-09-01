@@ -1,6 +1,8 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAsterisk } from '@fortawesome/free-solid-svg-icons';
+import config from '../config';
+import TokenService from '../services/token-service';
 import '../css/Form.css';
 
 export default class AddStitch extends React.Component {
@@ -9,12 +11,52 @@ export default class AddStitch extends React.Component {
         name: '',
         url: '',
         image_url: '',
-        notes: ''
+        notes: '',
+        error: null
     }
 
     handleSubmit = (event) => {
-        /* fetch post
-        reset form */
+        event.preventDefault()
+
+        const newStitch = {
+            name: this.state.name,
+            url: this.state.url,
+            image_url: this.state.url,
+            notes: this.state.notes
+        }
+
+        // Reset error if there was one previously.
+        this.setState({error: null})
+
+        fetch(`${config.API_ENDPOINT}/stitch-patterns/`, {
+            method: 'POST',
+            headers: {
+                'Authorization': `bearer ${TokenService.getAuthToken()}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newStitch)
+        })
+        .then(res => 
+            (!res.ok)
+            ? res.json().then(error => Promise.reject(error))
+            : res.json()
+        )
+        .then((stitch) => {
+            // reset form
+            this.setState({
+                name: '',
+                url: '',
+                image_url: '',
+                notes: '', 
+            }) 
+            // I know we set the Location header in the response object
+            // from the api, but I couldn't get it to redirect properly. 
+            // Therefore I'm just pushing the stitch pattern detail route instead. 
+           this.props.history.push(`stitch-patterns/${stitch.id}`)
+        })
+        .catch(res => {
+            this.setState({error: res.error})
+        })
     }
 
     handleChangeName = (event) => {

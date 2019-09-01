@@ -1,6 +1,8 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAsterisk } from '@fortawesome/free-solid-svg-icons';
+import config from '../config';
+import TokenService from '../services/token-service';
 import '../css/Form.css';
 
 export default class AddProjectPattern extends React.Component {
@@ -11,12 +13,56 @@ export default class AddProjectPattern extends React.Component {
         image_url: '',
         yarn: '',
         needles: '',
-        notes: ''
+        notes: '', 
+        error: null
     }
 
     handleSubmit = (event) => {
-        /* fetch post
-        reset form */
+        event.preventDefault()
+
+        const newProjectPattern = {
+            name: this.state.name,
+            url: this.state.url,
+            image_url: this.state.url,
+            yarn: this.state.yarn,
+            needles: this.state.needles,
+            notes: this.state.notes
+        }
+
+        // Reset error if there was one previously.
+        this.setState({error: null})
+
+        fetch(`${config.API_ENDPOINT}/project-patterns/`, {
+            method: 'POST',
+            headers: {
+                'Authorization': `bearer ${TokenService.getAuthToken()}`,
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newProjectPattern)
+        })
+        .then(res => 
+            (!res.ok)
+            ? res.json().then(error => Promise.reject(error))
+            : res.json()
+        )
+        .then((pattern) => {
+            // reset form
+            this.setState({
+                name: '',
+                url: '',
+                image_url: '',
+                yarn: '',
+                needles: '',
+                notes: '', 
+            }) 
+            // I know we set the Location header in the response object
+            // from the api, but I couldn't get it to redirect properly. 
+            // Therefore I'm just pushing the project pattern detail route instead. 
+           this.props.history.push(`project-patterns/${pattern.id}`)
+        })
+        .catch(res => {
+            this.setState({error: res.error})
+        })
     }
 
     handleChangeName = (event) => {
@@ -54,8 +100,6 @@ export default class AddProjectPattern extends React.Component {
             notes: event.target.value
         })
     }
-
-
 
     render() {
         return (

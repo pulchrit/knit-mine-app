@@ -1,5 +1,6 @@
 import React from 'react';
-import { PROJECT_PATTERNS } from '../static-data';
+import config from '../config';
+import TokenService from '../services/token-service';
 import '../css/ItemDetails.css';
 
 /* TO DO:  refactor ItemDetails to use for project patterns, stitches and my projects, 
@@ -14,25 +15,39 @@ export default class ProjectPatternItemDetails extends React.Component {
         match: { params: { id: '' } },
     }
 
-    /* state = {
-        projectPattern: {},
-    } */
-
     state = {
-        PROJECT_PATTERNS
-    }
+        projectPattern: {},
+        error: null
+    } 
 
-
-    /* componentDidMount() {
-        fetch to get pattern by id
+    componentDidMount() {
+        // Get project pattern id from route params
         const {id} = this.props.match.params
-    } */
-
+        
+        fetch(`${config.API_ENDPOINT}/project-patterns/${id}`, {
+            headers: {
+                'Authorization': `bearer ${TokenService.getAuthToken()}`
+            }
+        })
+        .then(res => 
+            (!res.ok)
+                ? res.json().then(e => Promise.reject(e))
+                : res.json()
+        )
+        .then(pattern => this.setState({
+            projectPattern: pattern
+            })
+        )
+        .catch(this.setState)
+    } 
 
     render() {
 
-        const projectPattern = this.state.PROJECT_PATTERNS.find(project => 
-            project.id.toString() === this.props.match.params.id) || this.props.projectPattern
+        const {projectPattern} = this.state
+
+        const image_url = projectPattern.image_url === ""
+        ? "https://via.placeholder.com/300/000000/FFFFFF?text=no+photo+uploaded"
+        : projectPattern.image_url
 
         return (
 
@@ -40,7 +55,7 @@ export default class ProjectPatternItemDetails extends React.Component {
 
                     <h2 className="details-subhead">{projectPattern.name}</h2>
                     <a className="details-img-a" target="_blank" rel="noopener noreferrer" href={projectPattern.url}>
-                        <img src={projectPattern.image_url} className="thumbnail" alt={projectPattern.name} />
+                        <img src={image_url} className="thumbnail" alt={projectPattern.name} />
                     </a>
 
                     <div className="details-copy">

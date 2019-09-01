@@ -13,6 +13,8 @@ import ProjectPatterns from './ProjectPatterns';
 import ProjectPatternItemDetails from './ProjectPatternItemDetails';
 import MyProjectPatterns from './MyProjectPatterns';
 import MyProjectPatternItemDetails from './MyProjectPatternItemDetails';
+import PublicOnlyRoute from '../customRoutes/PublicOnlyRoute';
+import PrivateRoute from '../customRoutes/PrivateRoute';
 import NotFoundPage from './NotFoundPage';
 import Footer from './Footer';
 import '../css/App.css';
@@ -32,60 +34,60 @@ export default class App extends React.Component {
             component={LandingPage}
           />
 
-          <Route
+          <PublicOnlyRoute
             path={'/login'}
             component={Login}
           />
 
-          <Route
+          <PublicOnlyRoute
             path={'/register'}
             component={Register}
           />
 
-          <Route 
+          <PrivateRoute 
             path={'/add-stitch'}
             component={AddStitch}
           />
 
-          <Route 
+          <PrivateRoute 
             path={'/add-project'}
             component={AddProjectPattern}
           />
           
-          <Route 
+          <PrivateRoute 
             path={'/add-my-project'}
             component={AddMyProject}
           />
           
-          <Route 
+          <PrivateRoute 
             exact
             path={'/stitch-patterns'}
             component={StitchPatterns}
           />
 
-         <Route
+         <PrivateRoute
             path={'/stitch-patterns/:id'}
             component={StitchItemDetails}
           />
 
-          <Route 
+          <PrivateRoute 
             exact
             path={'/project-patterns'}
             component={ProjectPatterns}
           />
 
-         <Route
+         <PrivateRoute
             path={'/project-patterns/:id'}
             component={ProjectPatternItemDetails}
           />
 
-          <Route 
+          <PrivateRoute 
             exact
             path={'/my-projects'}
             component={MyProjectPatterns}
           />
 
-         <Route
+         <PrivateRoute
             path={'/my-projects/:id'}
             component={MyProjectPatternItemDetails}
           />

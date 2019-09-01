@@ -1,18 +1,33 @@
 import React from 'react';
 import ListView from './ListView';
 import SearchAdd from './SearchAdd';
-import {STITCH_PATTERNS} from '../static-data';
+import config from '../config';
+import TokenService from '../services/token-service';
 
 export default class StitchPatterns extends React.Component {
 
     state = {
-        STITCH_PATTERNS
+        stitchPatterns: [],
+        error: null
     }
 
-    /* Fetch, GET stitch patterns from DB, eventually 
-    Or should the fetch really go in the ListView??? 
-    Determine which is best when creating interactive version.
-    */
+   componentDidMount() {
+    fetch(`${config.API_ENDPOINT}/stitch-patterns/`, {
+        headers: {
+            'Authorization': `bearer ${TokenService.getAuthToken()}`
+        }
+    })
+    .then(res => 
+        (!res.ok)
+        ? res.json().then(error => Promise.reject(error))
+        : res.json()
+    )
+    .then(stitches => this.setState({
+        stitchPatterns: stitches
+        })
+    )
+    .catch(this.setState) 
+}
 
     render() {
        
@@ -25,7 +40,7 @@ export default class StitchPatterns extends React.Component {
                 />
 
                 <ListView 
-                    data={this.state.STITCH_PATTERNS}
+                    data={this.state.stitchPatterns}
                     listName='Stitch Patterns' 
                     itemRoute='/stitch-patterns'
                 />

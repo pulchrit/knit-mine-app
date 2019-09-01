@@ -1,4 +1,5 @@
 import React from 'react';
+import AuthApiService from '../services/auth-api-service';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAsterisk } from '@fortawesome/free-solid-svg-icons';
 import '../css/Form.css';
@@ -7,13 +8,40 @@ export default class Register extends React.Component {
     state = {
         name: '',
         email: '',
-        password: ''
+        password: '',
+        error: null
     }
 
     handleSubmit = (event) => {
-        event.prevenDefault()
-        /* fetch post 
-        reset form fields*/
+        event.preventDefault()
+        const { name, email, password } = this.state
+    
+        // Reset error if there was one previously.
+        this.setState({error: null})
+    
+        // Post the new user to the server for validation and,
+        // if validated, for adding to the database
+        AuthApiService.postUser({
+          name,
+          email,
+          password
+        })
+        // If the user was validated and added to the database,
+        // reset the form and redirect to the login form component.
+        .then(user => {
+          // reset form
+          this.setState({
+            name: '',
+            email: '',
+            password: ''
+          })
+          this.props.history.push('/login') // will redirect to login page
+        })
+        // If validation and therefore registration are not successful,
+        // save the error in state and conditionally render it to the page.
+        .catch(res => {
+          this.setState({error: res.error})
+        })
 
     }
 

@@ -1,7 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import { MY_PROJECTS, PROJECT_PATTERNS, STITCH_PATTERNS } from '../static-data';
-import PetersHat from './images/peters_hat.JPG';
+import config from '../config';
+import TokenService from '../services/token-service';
+//import PetersHat from './images/peters_hat.JPG';
 import '../css/ItemDetails.css';
 
 /* TO DO:  refactor ItemDetails to use for my-project patterns, stitches and my projects, 
@@ -16,26 +17,36 @@ export default class MyProjectPatternItemDetails extends React.Component {
         match: { params: { id: '' } },
     }
 
-    /* state = {
-        projectPattern: {},
-    } */
-
     state = {
-        MY_PROJECTS,
-        PROJECT_PATTERNS,
-        STITCH_PATTERNS
-    }
+        myProject: {},
+        error: null
+    } 
 
-
-    /* componentDidMount() {
-        fetch to get pattern by id
+    componentDidMount() {
+        // Get my project id from route params
         const {id} = this.props.match.params
-    } */
+        
+        fetch(`${config.API_ENDPOINT}/my-projects/${id}`, {
+            headers: {
+                'Authorization': `bearer ${TokenService.getAuthToken()}`
+            }
+        })
+        .then(res => 
+            (!res.ok)
+                ? res.json().then(e => Promise.reject(e))
+                : res.json()
+        )
+        .then(myProject => this.setState({
+            myProject
+            })
+        )
+        .catch(this.setState)
+    } 
 
 
     render() {
 
-        const myProject = this.state.MY_PROJECTS.find(project => 
+        /* const myProject = this.state.MY_PROJECTS.find(project => 
             project.id.toString() === this.props.match.params.id) || this.props.myProject
 
         const projectPattern = this.state.PROJECT_PATTERNS.find(project => 
@@ -44,14 +55,20 @@ export default class MyProjectPatternItemDetails extends React.Component {
         const stitches = myProject.stitch_id.map((myProjectStitchId) => {
             return this.state.STITCH_PATTERNS.find(pattern => pattern.id === myProjectStitchId)
         }) || this.props.stitches
-        
+         */
+
+        const {myProject} = this.state
+
+        const image = !myProject.image
+            ? "https://via.placeholder.com/300/000000/FFFFFF?text=no+photo+uploaded"
+            : myProject.image
 
         return (
 
                 <section className="details-item">
 
                     <h2 className="details-subhead">{myProject.name}</h2>
-                    <img src={PetersHat} className="details-thumbnail" alt={myProject.name} />
+                    <img src={image} className="details-thumbnail" alt={myProject.name} />
                 
                     <div className="details-copy">
                         <h4 className="details-type">Description</h4>
@@ -71,16 +88,19 @@ export default class MyProjectPatternItemDetails extends React.Component {
 
                         <h4 className="details-type">Pattern</h4>
                         <p className="details-info">
-                            <Link className="pattern-stitch-links" to={`/project-patterns/${myProject.pattern_id}`}>
-                                {projectPattern.name}
-                            </Link>
+                            {myProject.pattern &&
+                                <Link className="pattern-stitch-links" to={`/project-patterns/${myProject.pattern.pattern_id}`}>
+                                    {myProject.pattern.pattern_name}
+                                </Link>
+                            }
                         </p>
                         
                         <h4 className="details-type">Stitches</h4>
                         <p className="details-info">
-                            {stitches.map((stitch) => 
-                                <Link className="pattern-stitch-links" key={`stitch-${stitch.id}`} to={`/stitch-patterns/${stitch.id}`}>
-                                    {stitch.name}
+                            {myProject.stitches &&
+                                myProject.stitches.map((stitch) => 
+                                <Link className="pattern-stitch-links" key={`stitch-${stitch.stitches_id}`} to={`/stitch-patterns/${stitch.stitches_id}`}>
+                                    {stitch.stitches_name}
                                 </Link> 
                             )}
                         </p>

@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import ProjectPatternItemDetails from './ProjectPatternItemDetails';
 import MyProjectPatternItemDetails from './MyProjectPatternItemDetails';
 import StitchItemDetails from './StitchItemDetails'
+import AddButton from './AddButton'
 import '../css/LandingPage.css';
 
 const LandingPage = () => {
@@ -52,6 +53,11 @@ const LandingPage = () => {
                 and post your own knit projects here. View them later when you 
                 need to remember exactly what yarn you used in that hat you made 
                 your friend for the holidays.</p>
+
+                <div className="landing-page-button-div">
+                    <AddButton name="Register" route="/register" otherClassName="landing-page-button" />
+                    <AddButton name="Login" route="/login" otherClassName="landing-page-button" />
+                </div>
             </section>
 
             <section className="landing-page-section">
@@ -79,7 +85,7 @@ const LandingPage = () => {
 
                 <ul> 
                     <li className="landing-page-li">To get started {' '}
-                        <Link to="/register">create an account</Link> {' '}
+                        <Link to="/register">register</Link> {' '}
                         and <Link to="/login">login</Link>.
                     </li>
 
@@ -121,7 +127,9 @@ const LandingPage = () => {
                 
                     <ul>
                     <li className="landing-page-li"> To get started {' '}
-                            <Link to="/add-project">add one of your own projects</Link>.
+                    <Link to="/register">register</Link> {' '}
+                        and <Link to="/login">login</Link>. {' '} Then {' '}
+                        <Link to="/add-project">add one of your own projects</Link>.
                     </li>
 
                     <li className="landing-page-li">Then you can {' '}

@@ -3,6 +3,7 @@ import Menu from './Menu';
 import MenuButton from './MenuButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import TokenService from '../services/token-service';
 import '../css/Nav.css';
 
 export default class Nav extends React.Component {
@@ -39,7 +40,36 @@ export default class Nav extends React.Component {
         });
     }
 
+    handleLogoutClick = (event) => {
+        event.stopPropagation()
+        TokenService.clearAuthToken()
+        this.setShowMyAccount(false)
+    }
+    
+    passLogoutRouteOption = () => {
+        return (
+                {
+                    route: '/',
+                    option: 'Logout',
+                }
+        )
+    }
+    
+    passLoginRouteOption = () => {
+        return (
+            {
+                route: '/login',
+                option: 'Login', 
+            }
+        )
+    }
+
     render() {
+
+        const menuRouteOptionsLogInOut = TokenService.hasAuthToken()
+                                        ? this.passLogoutRouteOption()
+                                        : this.passLoginRouteOption()
+        
 
         const { isExpanded } = this.state;
 
@@ -79,14 +109,14 @@ export default class Nav extends React.Component {
                             show={this.state.showMyAccount}
                         />
 
+
+
                         {this.state.showMyAccount && 
                             <Menu 
                                 setShow={this.setShowMyAccount}
+                                clickLogout={this.handleLogoutClick}
                                 menuRoutesOptions={[
-                                    {
-                                        route: '/login',
-                                        option: 'Login'
-                                    },
+                                    menuRouteOptionsLogInOut,
                                     {
                                         route: '/register',
                                         option: 'Register'
