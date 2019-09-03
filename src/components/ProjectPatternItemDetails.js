@@ -24,7 +24,7 @@ export default class ProjectPatternItemDetails extends React.Component {
         // Get project pattern id from route params
         const {id} = this.props.match.params
         
-        fetch(`${config.API_ENDPOINT}/project-patterns/${id}`, {
+        fetch(`${config.API_ENDPOINT}api/project-patterns/${id}`, {
             headers: {
                 'Authorization': `bearer ${TokenService.getAuthToken()}`
             }

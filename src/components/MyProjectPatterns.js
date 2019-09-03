@@ -11,8 +11,21 @@ export default class MYProjectPatterns extends React.Component {
         error: null
     }
 
+    getProjectImages = (projects) => {
+        return projects.map(project => {
+            if (project.image) {
+                const imageObject = JSON.parse(project.image)
+                return project = {
+                    ...project,
+                    image: `${config.API_ENDPOINT}${imageObject.name}`
+                }
+            }
+            return project
+        })
+    } 
+
     componentDidMount() {
-        fetch(`${config.API_ENDPOINT}/my-projects/`, {
+        fetch(`${config.API_ENDPOINT}api/my-projects/`, {
             headers: {
                 'Authorization': `bearer ${TokenService.getAuthToken()}`
             }
@@ -22,10 +35,12 @@ export default class MYProjectPatterns extends React.Component {
             ? res.json().then(error => Promise.reject(error))
             : res.json()
         )
-        .then(projects => this.setState({
-            myProjects: projects
+        .then((projects) => this.getProjectImages(projects))
+        .then((projects) => {
+            this.setState({
+                myProjects: projects
             })
-        )
+        })
         .catch(this.setState) 
     }
 

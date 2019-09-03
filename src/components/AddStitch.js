@@ -21,14 +21,14 @@ export default class AddStitch extends React.Component {
         const newStitch = {
             name: this.state.name,
             url: this.state.url,
-            image_url: this.state.url,
+            image_url: this.state.image_url,
             notes: this.state.notes
         }
 
         // Reset error if there was one previously.
         this.setState({error: null})
 
-        fetch(`${config.API_ENDPOINT}/stitch-patterns/`, {
+        fetch(`${config.API_ENDPOINT}api/stitch-patterns/`, {
             method: 'POST',
             headers: {
                 'Authorization': `bearer ${TokenService.getAuthToken()}`,

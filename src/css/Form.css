@@ -60,3 +60,25 @@ input, textarea {
   margin: 10% 0;
   width: 100%;
 }
+
+#project_pattern {
+  max-width: 100%;
+}
+
+#stitch_pattern option {
+  width: 100%;
+}
+
+/* .add-stitch-button {
+  max-width: 30%;
+  margin: 0;
+
+}
+
+.stitch-patterns-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; 
+  width: 100%;
+} */

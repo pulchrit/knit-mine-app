@@ -23,7 +23,7 @@ export default class AddProjectPattern extends React.Component {
         const newProjectPattern = {
             name: this.state.name,
             url: this.state.url,
-            image_url: this.state.url,
+            image_url: this.state.image_url,
             yarn: this.state.yarn,
             needles: this.state.needles,
             notes: this.state.notes
@@ -32,11 +32,11 @@ export default class AddProjectPattern extends React.Component {
         // Reset error if there was one previously.
         this.setState({error: null})
 
-        fetch(`${config.API_ENDPOINT}/project-patterns/`, {
+        fetch(`${config.API_ENDPOINT}api/project-patterns/`, {
             method: 'POST',
             headers: {
                 'Authorization': `bearer ${TokenService.getAuthToken()}`,
-                'content-type': 'application/json'
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify(newProjectPattern)
         })

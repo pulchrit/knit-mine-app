@@ -1,11 +1,10 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-//import PetersHat from './images/peters_hat.JPG';
 import "../css/ListItem.css";
 
 const ListItem = ({item, itemRoute}) => {
 
-    // If there is not image_url (stitches, patterns) or no image (my projects), 
+    // If there is no image_url (stitches, patterns) or no image (my projects), 
     // use a placholder as the image source.
     let image_src
     const placeholder = "https://via.placeholder.com/300/000000/FFFFFF?text=no+photo+uploaded"
@@ -21,11 +20,6 @@ const ListItem = ({item, itemRoute}) => {
 
     return (
         <div className="pattern-project-list-item">
-        
-           {/* {itemRoute === '/my-projects'
-                ? <img src={PetersHat} className="thumbnail" alt={item.name} />
-                : <img src={item.image_url} className="thumbnail" alt={item.name} />
-            } */}
 
             <img src={image_src} className="thumbnail" alt={item.name} />
 

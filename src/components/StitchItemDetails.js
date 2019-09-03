@@ -24,7 +24,7 @@ export default class StitchItemDetails extends React.Component {
         // Get stitch pattern id from route params
         const {id} = this.props.match.params
         
-        fetch(`${config.API_ENDPOINT}/stitch-patterns/${id}`, {
+        fetch(`${config.API_ENDPOINT}api/stitch-patterns/${id}`, {
             headers: {
                 'Authorization': `bearer ${TokenService.getAuthToken()}`
             }

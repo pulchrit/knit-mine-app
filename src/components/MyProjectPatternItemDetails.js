@@ -2,7 +2,6 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import config from '../config';
 import TokenService from '../services/token-service';
-//import PetersHat from './images/peters_hat.JPG';
 import '../css/ItemDetails.css';
 
 /* TO DO:  refactor ItemDetails to use for my-project patterns, stitches and my projects, 
@@ -26,7 +25,7 @@ export default class MyProjectPatternItemDetails extends React.Component {
         // Get my project id from route params
         const {id} = this.props.match.params
         
-        fetch(`${config.API_ENDPOINT}/my-projects/${id}`, {
+        fetch(`${config.API_ENDPOINT}api/my-projects/${id}`, {
             headers: {
                 'Authorization': `bearer ${TokenService.getAuthToken()}`
             }
@@ -36,29 +35,25 @@ export default class MyProjectPatternItemDetails extends React.Component {
                 ? res.json().then(e => Promise.reject(e))
                 : res.json()
         )
-        .then(myProject => this.setState({
-            myProject
+        .then((project) => {
+            const imageObject = JSON.parse(project.image)
+            this.setState({
+                myProject: {
+                    ...project,
+                image: `${config.API_ENDPOINT}${imageObject.name}`
+                }
+                
             })
-        )
+        })
         .catch(this.setState)
     } 
 
 
     render() {
 
-        /* const myProject = this.state.MY_PROJECTS.find(project => 
-            project.id.toString() === this.props.match.params.id) || this.props.myProject
-
-        const projectPattern = this.state.PROJECT_PATTERNS.find(project => 
-            project.id === myProject.pattern_id) || this.props.projectPattern
-        
-        const stitches = myProject.stitch_id.map((myProjectStitchId) => {
-            return this.state.STITCH_PATTERNS.find(pattern => pattern.id === myProjectStitchId)
-        }) || this.props.stitches
-         */
-
         const {myProject} = this.state
 
+        // Use placeholder image if user does not upload one.
         const image = !myProject.image
             ? "https://via.placeholder.com/300/000000/FFFFFF?text=no+photo+uploaded"
             : myProject.image
