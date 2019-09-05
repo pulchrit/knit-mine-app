@@ -8,11 +8,12 @@
     margin-bottom: 5%;
 }
 
-.search-label {
+.search-label, .search-clear {
     flex: 5%;
-    margin: 0 10px;
+    /* margin: 0 10px; */
+    margin: 0;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 .search-input {
@@ -56,11 +57,15 @@
         margin-bottom: 0;
     }
     
-    .search-label {
+    .search-label, .search-clear {
         flex: 5%;
-        margin: 0 10px;
+        /* //margin: 0 10px; */
         display: flex;
         justify-content: flex-end;
+    }
+
+    .search-clear {
+        justify-content: flex-start;
     }
     
     .search-input {
@@ -68,4 +73,5 @@
         /* align-self: center; */
         margin: 0 10px;
     } 
+
 }

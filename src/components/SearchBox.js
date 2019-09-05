@@ -1,30 +1,15 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import '../css/AddButton.css';
 import '../css/SearchBox.css';
 
 export default class SearchBox extends React.Component {
 
-    state = {
-        searchTermEntered: ''
-    }
-
-    handleSubmit = (event) => {
-        event.preventDefault();
-        
-        /* fetch GET? */
-    }
-
-    handleChangeSearchTermEntered = (event) => {
-        this.setState({
-            searchTermEntered: event.target.value
-        })
-    }
-
     render() {
+
         return (
-            <form className='search-form' onSubmit={this.handleSubmit}>
+            <form className='search-form' onKeyPress={this.props.onKeyPress} >
                 
                 <label className="search-label" htmlFor="search-box">
                     <FontAwesomeIcon className='fa-search' icon={faSearch} />
@@ -35,12 +20,18 @@ export default class SearchBox extends React.Component {
                     id="search-box"
                     name="search-box"
                     placeholder={this.props.searchCopy}
-                    value={this.state.searchTermEntered}
-                    onChange={this.handleChangeSearchTermEntered}
+                    value={this.props.searchTermEntered}
+                    onChange={(event) => this.props.handleChangeSearchTermEntered(event.target.value)}
                 />
-
-                <button className="button search-button" type="submit">Search</button>
-
+                
+                <div className='search-clear'>
+                    <FontAwesomeIcon 
+                        className='fa-search' 
+                        icon={faTimesCircle}
+                        onClick={(event) => this.props.handleClearSearch(event)}
+                    />
+                </div>
+                
             </form>
         )
     }

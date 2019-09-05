@@ -1,7 +1,8 @@
 .search-add-section {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
+    /* justify-content: space-around; */
     align-items: center;
     margin: 2% auto;
 }
@@ -9,6 +10,7 @@
 @media only screen and (min-width: 750px) {
     .search-add-section {
         flex-direction: row; 
+        justify-content: space-around;
         margin: 0;
     }
 }

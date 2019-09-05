@@ -28,14 +28,16 @@ export default class AddMyProject extends React.Component {
 
     componentDidMount() {
         // Get project patterns for select input.
-        DataService.getAllProjectPatterns()
+        DataService.getData('project-patterns')
+       // DataService.getAllProjectPatterns()
             .then(projectPatterns => this.setState({
                 projectPatternOptions: projectPatterns
             }))
             .catch(this.SetState)
 
         // Get stitch patterns for select input.
-        DataService.getAllStitchPatterns()
+        DataService.getData('stitch-patterns')
+        //DataService.getAllStitchPatterns()
             .then(stitchPatterns => this.setState({
                 stitchPatternOptions: stitchPatterns
             }))
@@ -86,23 +88,7 @@ export default class AddMyProject extends React.Component {
             (!res.ok)
             ? res.json().then(error => Promise.reject(error))
             : res.json()
-        )
-       /*  .then((project) => {
-            debugger;
-            // Attribution for converting arrayBuffer to image: 
-            //https://tinyurl.com/y68gvswc
-            var arrayBufferView = new Uint8Array(project.image.data);
-            // Can use spread operator instead of apply here, I think.
-            const stringCharacters = String.fromCharCode(...arrayBufferView)
-            //const STRING_CHAR = String.fromCharCode.apply(null, TYPED_ARRAY);
-            // window.btoa() or just btoa() ????
-            const base64String = window.btoa(STRING_CHAR);
-            const imageUrl = `data:image/jpg;base64,${base64String}`
-            //var blob = new Blob( [ arrayBufferView ], { type: "image/jpeg" } );
-            //var urlCreator = window.URL || window.webkitURL;
-            //var imageUrl = urlCreator.createObjectURL( blob );
-            //var img = document.querySelector( "#photo" );
-            //img.src = imageUrl;  })*/     
+        )   
         .then((project) => {
             // reset form
             this.setState({
@@ -120,16 +106,6 @@ export default class AddMyProject extends React.Component {
             // Therefore I'm just pushing the project pattern detail route instead. 
             this.props.history.push(`my-projects/${project.id}`)
         })
-        //.then((project) => 
-            //}, () => this.props.history.push(`my-projects/${project.id}`)) 
-            // Attribution: https://tinyurl.com/y3khnh9c
-            // Reset the image ref after submission???
-            //this.image.reset()
-            // I know we set the Location header in the response object
-            // from the api, but I couldn't get it to redirect properly. 
-            // Therefore I'm just pushing the project pattern detail route instead. 
-          // this.props.history.push(`my-projects/${project.id}`)
-        //)
         .catch(res => {
             this.setState({error: res.error})
         })
@@ -198,8 +174,7 @@ export default class AddMyProject extends React.Component {
         
         this.setState({
             stitch_patterns: selectedStitches
-        }, () => console.log("stitch_patterns from state:", this.state.stitch_patterns)
-        )
+        })
     }
 
     render() {
