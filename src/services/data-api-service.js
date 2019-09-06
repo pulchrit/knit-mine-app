@@ -6,7 +6,7 @@ const DataService = {
     getData(pathName) {
         return fetch(`${config.API_ENDPOINT}api/${pathName}/`, {
             headers: {
-                'Authorization': `bearer ${TokenService.getAuthToken()}`
+                'authorization': `bearer ${TokenService.getAuthToken()}`
             }
         })
         .then(res => 
