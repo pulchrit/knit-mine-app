@@ -8,11 +8,8 @@ import AddProjectPattern from './AddProjectPattern';
 import AddStitch from './AddStitch';
 import AddMyProject from './AddMyProject';
 import ProjectsStitchesPatterns from './ProjectsStitchesPatterns';
-//import StitchPatterns from './StitchPatterns';
 import StitchItemDetails from './StitchItemDetails';
-//import ProjectPatterns from './ProjectPatterns';
 import ProjectPatternItemDetails from './ProjectPatternItemDetails';
-//import MyProjectPatterns from './MyProjectPatterns';
 import MyProjectPatternItemDetails from './MyProjectPatternItemDetails';
 import PublicOnlyRoute from '../customRoutes/PublicOnlyRoute';
 import PrivateRoute from '../customRoutes/PrivateRoute';
@@ -63,7 +60,6 @@ export default class App extends React.Component {
           <PrivateRoute 
             exact
             path={'/stitch-patterns'}
-            //component={StitchPatterns}
             component={ProjectsStitchesPatterns}
           />
 
@@ -76,7 +72,6 @@ export default class App extends React.Component {
             exact
             path={'/project-patterns'}
             component={ProjectsStitchesPatterns}
-            //component={ProjectPatterns}
           />
 
          <PrivateRoute
@@ -88,7 +83,6 @@ export default class App extends React.Component {
             exact
             path={'/my-projects'}
             component={ProjectsStitchesPatterns}
-            //component={MyProjectPatterns}
           />
 
          <PrivateRoute

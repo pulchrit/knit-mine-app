@@ -1,6 +1,6 @@
 
 .landing-page {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -9,7 +9,7 @@
     font-family: 'Crimson Text', serif;
     line-height: 1.5;
     letter-spacing: 1px;
-    margin-top: 7%;
+    margin: 7% auto;
     max-width: 800px;
 }
 
@@ -40,6 +40,13 @@
     width: 80%
 }
 
+.screen-shot {
+    width: 75%;
+    border-radius: 3px;
+    margin: 10px;
+    box-shadow: 5px 5px 5px lightgrey;
+}
+
 .landing-page-li {
     padding: 5px 0;
 }
@@ -51,4 +58,28 @@
     margin: 20px 0;
     font-size: 1em;
     line-height: 1.6;
+}
+
+.caption {
+    font-size: .8em;
+}
+
+figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media only screen and (min-width: 750px) {
+    .landing-page-section {
+        display: flex;
+    }
+
+    .copy {
+        width: 60%
+    }
+
+    patterns-projects-preview {
+        width: 40%;
+    }
 }

@@ -10,7 +10,6 @@
 
 .search-label, .search-clear {
     flex: 5%;
-    /* margin: 0 10px; */
     margin: 0;
     display: flex;
     justify-content: center;
@@ -18,14 +17,8 @@
 
 .search-input {
     flex: 60%;
-    /* align-self: center; */
     margin: 0 10px;
 } 
-
-/* .search-button {
-    flex: 0%;
-    /* align-self: flex-end; 
-} */
 
 .fa-search {
     color: gray;
@@ -59,7 +52,6 @@
     
     .search-label, .search-clear {
         flex: 5%;
-        /* //margin: 0 10px; */
         display: flex;
         justify-content: flex-end;
     }
@@ -70,7 +62,6 @@
     
     .search-input {
         flex: 60%;
-        /* align-self: center; */
         margin: 0 10px;
     } 
 

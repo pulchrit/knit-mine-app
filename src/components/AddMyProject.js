@@ -29,7 +29,6 @@ export default class AddMyProject extends React.Component {
     componentDidMount() {
         // Get project patterns for select input.
         DataService.getData('project-patterns')
-       // DataService.getAllProjectPatterns()
             .then(projectPatterns => this.setState({
                 projectPatternOptions: projectPatterns
             }))
@@ -37,7 +36,6 @@ export default class AddMyProject extends React.Component {
 
         // Get stitch patterns for select input.
         DataService.getData('stitch-patterns')
-        //DataService.getAllStitchPatterns()
             .then(stitchPatterns => this.setState({
                 stitchPatternOptions: stitchPatterns
             }))

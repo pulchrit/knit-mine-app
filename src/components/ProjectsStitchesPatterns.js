@@ -83,18 +83,8 @@ export default class ProjectsStitchesPatterns extends React.Component {
    
     componentDidMount() {
         
-        //const currentPath = (this.getCurrentPath())
         const pathNames = ['stitch-patterns', 'project-patterns', 'my-projects']
-        /* fetch(`${config.API_ENDPOINT}api${currentPath}/`, {
-            headers: {
-                'Authorization': `bearer ${TokenService.getAuthToken()}`
-            }
-        })
-        .then(res => 
-            (!res.ok)
-            ? res.json().then(error => Promise.reject(error))
-            : res.json()
-        ) */
+        
         pathNames.forEach((pathName) => DataService.getData(pathName)
             .then((data) => {
                 if (pathName === 'my-projects') {
@@ -115,10 +105,6 @@ export default class ProjectsStitchesPatterns extends React.Component {
     render() {
         
         const renderData = this.getRenderData(this.getCurrentPath())
-      /*   console.log('renderData from render:', renderData)
-        console.log("my projects from state:", this.state['my-projects'])
-        console.log('stitch patterns from state:', this.state['stitch-patterns'])
-        console.log('project patterns from state:', this.state['project-patterns']) */
         
         return (
             <>
