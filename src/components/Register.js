@@ -64,12 +64,18 @@ export default class Register extends React.Component {
     }
 
     render() {
+
+        const {error} = this.state
+
         return (
                 <form 
                     className="form" 
                     onSubmit={this.handleSubmit}
                 >
                     <h2 className="subhead">Create an account</h2>
+
+                    {/* If there is an error, render it, otherwise 'display' empty string. */}
+                    {error ? <p className='error' role='alert'>{error}</p> : ''}
 
                     <label htmlFor="name">
                     Name: <FontAwesomeIcon className='fa-asterisk' icon={faAsterisk} />

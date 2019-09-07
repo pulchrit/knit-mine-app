@@ -35,7 +35,11 @@ export default class MyProjectPatternItemDetails extends React.Component {
                 ? res.json().then(e => Promise.reject(e))
                 : res.json()
         )
-        .then((project) => {
+        .then(project => this.setState({
+            myProject: project
+            })
+        )
+        /* .then((project) => {
             const imageObject = JSON.parse(project.image)
             this.setState({
                 myProject: {
@@ -44,14 +48,18 @@ export default class MyProjectPatternItemDetails extends React.Component {
                 }
                 
             })
+        }) */
+        //.catch(this.setState)
+        .catch(res => { // does this work properly???
+            this.setState({error: res.error})
         })
-        .catch(this.setState)
     } 
 
 
     render() {
 
         const {myProject} = this.state
+        const {error} = this.state
 
         // Use placeholder image if user does not upload one.
         const image = !myProject.image
@@ -61,6 +69,9 @@ export default class MyProjectPatternItemDetails extends React.Component {
         return (
 
                 <section className="details-item">
+
+                    {/* If there is an error, render it, otherwise 'display' empty string. */}
+                    {error ? <p className='error' role='alert'>{error}</p> : ''}
 
                     <h2 className="details-subhead">{myProject.name}</h2>
                     <img src={image} className="details-thumbnail" alt={myProject.name} />

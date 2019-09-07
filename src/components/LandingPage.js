@@ -1,9 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import AddButton from './AddButton'
-import MyProjects from '../images/myProjects.png';
-import ProjectPatterns from '../images/projectPatterns.png';
-import StitchPatterns from '../images/stitchPatterns.png';
 import '../css/LandingPage.css';
 
 const LandingPage = () => {
@@ -13,7 +10,6 @@ const LandingPage = () => {
        
         <div className="landing-page">
 
-            
             <section>
                 <p className="intro-copy">Store knitting project and stitch patterns 
                 and post your own knit projects here. View them later when you 
@@ -72,12 +68,12 @@ const LandingPage = () => {
 
                 <section className="patterns-projects-preview">
                     <figure>
-                        <img className="screen-shot" src={ProjectPatterns} alt="Project patterns" />
+                        <img className="screen-shot" src="https://knit-mine-uploads.s3-us-west-2.amazonaws.com/projectPatterns.png" alt="Project patterns" />
                         <figcaption className="caption">View Project Patterns</figcaption>
                     </figure>
 
                     <figure>
-                        <img className="screen-shot" src={StitchPatterns} alt="Stitch patterns" />
+                        <img className="screen-shot" src="https://knit-mine-uploads.s3-us-west-2.amazonaws.com/stitchPatterns.png" alt="Stitch patterns" />
                         <figcaption className="caption">View Stitch Patterns</figcaption>
                     </figure>
                 </section>
@@ -122,7 +118,7 @@ const LandingPage = () => {
 
                 <section className="patterns-projects-preview">
                     <figure>
-                        <img className="screen-shot" src={MyProjects} alt="View my projects"/>
+                        <img className="screen-shot" src="https://knit-mine-uploads.s3-us-west-2.amazonaws.com/myProjects.png" alt="View my projects"/>
                         <figcaption className="caption">View My Projects</figcaption>
                     </figure>
                     
