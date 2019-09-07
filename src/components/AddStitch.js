@@ -84,6 +84,9 @@ export default class AddStitch extends React.Component {
     }
 
     render() {
+
+        const {error} = this.state
+        
         return (
 
                 <form 
@@ -91,6 +94,10 @@ export default class AddStitch extends React.Component {
                     onSubmit={this.handleSubmit}
                 >
                     <h2 className="subhead">Add a stitch pattern</h2>
+
+                    {/* If there is an error, render it, otherwise 'display' empty string. */}
+                    {error ? <p className='error' role='alert'>{error}</p> : ''}
+        
 
                     <label htmlFor="name">
                         Name: <FontAwesomeIcon className='fa-asterisk' icon={faAsterisk} />

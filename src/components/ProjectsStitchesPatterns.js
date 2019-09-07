@@ -1,7 +1,6 @@
 import React from 'react';
 import ListView from './ListView';
 import SearchAdd from './SearchAdd';
-import config from '../config';
 import DataService from '../services/data-api-service';
 
 export default class ProjectsStitchesPatterns extends React.Component {
@@ -47,19 +46,6 @@ export default class ProjectsStitchesPatterns extends React.Component {
         }
     }
 
-    getProjectImages = (projects) => {
-        return projects.map(project => {
-            if (project.image) {
-                const imageObject = JSON.parse(project.image)
-                return project = {
-                    ...project,
-                    image: `${config.API_ENDPOINT}${imageObject.name}`
-                }
-            }
-            return project
-        })
-    } 
-
     handleChangeSearchTermEntered = (searchTermEntered) => {
         this.setState({
             searchTermEntered
@@ -87,12 +73,6 @@ export default class ProjectsStitchesPatterns extends React.Component {
         
         pathNames.forEach((pathName) => DataService.getData(pathName)
             .then((data) => {
-                if (pathName === 'my-projects') {
-                    return this.getProjectImages(data)
-                }
-                    return data
-            })
-            .then((data) => {
                 this.setState({
                     [pathName]: data,
                 })
@@ -105,9 +85,13 @@ export default class ProjectsStitchesPatterns extends React.Component {
     render() {
         
         const renderData = this.getRenderData(this.getCurrentPath())
+        const {error} = this.state
         
         return (
             <>
+                {/* If there is an error, render it, otherwise 'display' empty string. */}
+                {error ? <p className='error' role='alert'>{error}</p> : ''}
+
                 <SearchAdd 
                     name={renderData.name} 
                     route={renderData.route} 

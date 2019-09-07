@@ -38,12 +38,16 @@ export default class ProjectPatternItemDetails extends React.Component {
             projectPattern: pattern
             })
         )
-        .catch(this.setState)
+        //.catch(this.setState)
+        .catch(res => { // does this work properly???
+            this.setState({error: res.error})
+        })
     } 
 
     render() {
 
         const {projectPattern} = this.state
+        const {error} = this.state
 
         const image_url = projectPattern.image_url === ""
         ? "https://via.placeholder.com/300/000000/FFFFFF?text=no+photo+uploaded"
@@ -52,6 +56,9 @@ export default class ProjectPatternItemDetails extends React.Component {
         return (
 
                 <section className="details-item">
+
+                    {/* If there is an error, render it, otherwise 'display' empty string. */}
+                    {error ? <p className='error' role='alert'>{error}</p> : ''}
 
                     <h2 className="details-subhead">{projectPattern.name}</h2>
                     <a className="details-img-a" target="_blank" rel="noopener noreferrer" href={projectPattern.url}>

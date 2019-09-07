@@ -69,6 +69,12 @@ input, textarea {
   width: 100%;
 }
 
+.current-image-status {
+  color: green;
+  margin: 2px;
+  size: .9em;
+}
+
 /* .add-stitch-button {
   max-width: 30%;
   margin: 0;

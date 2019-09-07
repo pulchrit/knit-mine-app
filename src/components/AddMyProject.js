@@ -1,10 +1,11 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAsterisk } from '@fortawesome/free-solid-svg-icons';
-import config from '../config';
-import TokenService from '../services/token-service';
-import DataService from '../services/data-api-service';
-import '../css/Form.css';
+import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAsterisk } from '@fortawesome/free-solid-svg-icons'
+import config from '../config'
+import TokenService from '../services/token-service'
+import DataService from '../services/data-api-service'
+import S3Service from '../services/s3-service'
+import '../css/Form.css'
 
 export default class AddMyProject extends React.Component {
 
@@ -13,6 +14,8 @@ export default class AddMyProject extends React.Component {
         this.image = React.createRef()
         this.state = {
             name: '',
+            image: '',
+            image_status: 'no image',
             description: '',
             gift_recipient: '',
             gift_occasion: '',
@@ -32,18 +35,18 @@ export default class AddMyProject extends React.Component {
             .then(projectPatterns => this.setState({
                 projectPatternOptions: projectPatterns
             }))
-            .catch(this.SetState)
+            .catch(res => {
+                this.setState({error: res.error})
+            })
 
         // Get stitch patterns for select input.
         DataService.getData('stitch-patterns')
             .then(stitchPatterns => this.setState({
                 stitchPatternOptions: stitchPatterns
             }))
-            .catch(this.SetState)
-    }
-   
-    resetImage = () => {
-        this.image.reset()
+            .catch(res => {
+                this.setState({error: res.error}) 
+            })
     }
 
     handleSubmit = (event) => {
@@ -54,7 +57,7 @@ export default class AddMyProject extends React.Component {
 
         const newProject = {
             name: this.state.name,
-            image: this.image.current.files[0],
+            image: this.state.image,
             description: this.state.description,
             gift_recipient: this.state.gift_recipient,
             gift_occasion: this.state.gift_occasion,
@@ -64,23 +67,13 @@ export default class AddMyProject extends React.Component {
             stitch_patterns: this.state.stitch_patterns
         }
 
-        // Attribution for using formData with Fetch and file uploads: 
-        // https://upmostly.com/tutorials/upload-a-file-from-a-react-component
-        // Create new FormData instance to use to upload file
-        // and other form inputs as a Blob. 
-        const formData = new FormData()
-        // Append the key/value pairs from the newProject above to 
-        // the formData object.
-        for (let [key, value] of Object.entries(newProject)) {
-            formData.append(key, value)
-        }
-
         fetch(`${config.API_ENDPOINT}api/my-projects/`, {
             method: 'POST',
             headers: {
                 'Authorization': `bearer ${TokenService.getAuthToken()}`,
+                'Content-Type': 'application/json'
             },
-            body: formData
+            body: JSON.stringify(newProject)
         })
         .then(res => 
             (!res.ok)
@@ -91,6 +84,7 @@ export default class AddMyProject extends React.Component {
             // reset form
             this.setState({
                 name: '',
+                image: '',
                 description: '',
                 gift_recipient: '',
                 gift_occasion: '',
@@ -112,6 +106,34 @@ export default class AddMyProject extends React.Component {
     handleChangeName = (event) => {
         this.setState({
             name: event.target.value
+        })
+    }
+
+    // When image has been added, this function initiates
+    // a call to the function that uploads to s3 thru the 
+    // callback. I made it like this so that the image_status 
+    // state could be updated and rendered for the user while
+    // the image is being uploaded.
+    handleChangeImage = (event) => {
+        const file = this.image.current.files[0]
+        this.setState({
+            image_status: 'uploading'
+        }, this.uploadThenSetImageState(file))
+    }
+
+    // This function initiates the upload to S3 and then 
+    // sets the image state to the S3 url where the image
+    // can be retrieved. We'll only store this S3 url in the
+    // database.
+    uploadThenSetImageState = (file) => {
+        S3Service.uploadToS3(file)
+        .then(url => 
+            this.setState({
+                image: url,
+                image_status: 'upload complete'
+            }))
+        .catch(res => { 
+            this.setState({error: res.error})
         })
     }
 
@@ -176,6 +198,23 @@ export default class AddMyProject extends React.Component {
     }
 
     render() {
+        
+        // Get current image status to render to page, so that user doesn't click 
+        // submit until image has been uploaded. 
+        // Submit will also be disabled while the state is 'uploading'.
+        let current_image_status
+        let disableButton = false
+        if (this.state.image_status === 'no image') {
+            current_image_status = ''
+        } else if (this.state.image_status === 'uploading') {
+            current_image_status = "Uploading image...This may take a minute or two. Please wait."
+            disableButton = true
+        } else if (this.state.image_status === 'upload complete') {
+            current_image_status = "Success! Image has been uploaded."
+            disableButton = false
+        }
+
+        const {error} = this.state
 
         return (
            
@@ -185,6 +224,9 @@ export default class AddMyProject extends React.Component {
                 >
                     
                     <h2 className="subhead">Add my project</h2>
+
+                    {/* If there is an error, render it, otherwise 'display' empty string. */}
+                    {error ? <p className='error' role='alert'>{error}</p> : ''}
 
                     <label htmlFor="name">
                         Name: <FontAwesomeIcon className='fa-asterisk' icon={faAsterisk} />
@@ -208,7 +250,9 @@ export default class AddMyProject extends React.Component {
                         name="image" 
                         accept="image/*"
                         ref={this.image}
+                        onChange={this.handleChangeImage}
                     />
+                    <p className="current-image-status">{current_image_status}</p>
 
                     <label htmlFor="description">
                         Description: 
@@ -312,7 +356,11 @@ export default class AddMyProject extends React.Component {
                         )}
                     </select>
 
-                <button className="button form-buttons" type="submit">
+                <button 
+                    className="button form-buttons" 
+                    type="submit"
+                    disabled={disableButton}
+                >
                         Add my project
                 </button>
                 </form>
