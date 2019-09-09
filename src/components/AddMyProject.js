@@ -223,7 +223,7 @@ export default class AddMyProject extends React.Component {
                     onSubmit={this.handleSubmit}
                 >
                     
-                    <h2 className="subhead">Add my project</h2>
+                    <h2 className="subhead">Add a project</h2>
 
                     {/* If there is an error, render it, otherwise 'display' empty string. */}
                     {error ? <p className='error' role='alert'>{error}</p> : ''}

@@ -1,6 +1,6 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
-import "../css/ListItem.css";
+import React from 'react'
+import {Link} from 'react-router-dom'
+import "../css/ListItem.css"
 
 const ListItem = ({item, itemRoute}) => {
 
@@ -27,12 +27,12 @@ const ListItem = ({item, itemRoute}) => {
 
             <div className="list-buttons">
                 
-                <button className="button" type="button">
+                <button className="list-button" type="button">
                     <Link to={`${itemRoute}/${item.id}`}>More info</Link>
                 </button> 
 
                 {item.url && 
-                    <button className="button" type="button">
+                    <button className="list-button" type="button">
                         <a target="_blank" rel="noopener noreferrer"href={item.url}>View Pattern</a>
                     </button>
                 }

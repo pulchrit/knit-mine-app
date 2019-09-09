@@ -1,23 +1,20 @@
-/* .add-project-pattern-section {
-    text-align: right;
-    /* max-width: 600px; 
-    margin: 5% auto 0 auto;
-} */
+
 
 .button a:link,
 .button a:visited,
 .button a:focus,
 .button a:hover,
 .button a:active {
-  color: white;
+  color: #ebe8ea;
   text-decoration: none;
 }
 
 .button {
-  background-color: gray;
+  background-color: #69435b;
   border-radius: 3px;
   border: none;
   padding: 10px;
   margin: 0 10px;
-  color: white;
-}
+  color: #ebe8ea;
+  cursor: pointer;
+} 

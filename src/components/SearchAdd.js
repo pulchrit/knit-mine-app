@@ -1,7 +1,7 @@
-import React from 'react';
-import SearchBox from './SearchBox';
-import AddButton from './AddButton';
-import '../css/SearchAdd.css';
+import React from 'react'
+import SearchBox from './SearchBox'
+import AddButton from './AddButton'
+import '../css/SearchAdd.css'
 
 const SearchAdd = ({name, 
                     route, 

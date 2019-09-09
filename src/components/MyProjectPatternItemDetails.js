@@ -1,8 +1,8 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
-import config from '../config';
-import TokenService from '../services/token-service';
-import '../css/ItemDetails.css';
+import React from 'react'
+import {Link} from 'react-router-dom'
+import config from '../config'
+import TokenService from '../services/token-service'
+import '../css/ItemDetails.css'
 
 /* TO DO:  refactor ItemDetails to use for my-project patterns, stitches and my projects, 
 instead of having separate components for each. 
@@ -39,18 +39,7 @@ export default class MyProjectPatternItemDetails extends React.Component {
             myProject: project
             })
         )
-        /* .then((project) => {
-            const imageObject = JSON.parse(project.image)
-            this.setState({
-                myProject: {
-                    ...project,
-                image: `${config.API_ENDPOINT}${imageObject.name}`
-                }
-                
-            })
-        }) */
-        //.catch(this.setState)
-        .catch(res => { // does this work properly???
+        .catch(res => { 
             this.setState({error: res.error})
         })
     } 

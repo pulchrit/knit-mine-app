@@ -16,12 +16,22 @@
 .menu-options {
     text-align: left;
     padding: 10px 5px;
+    font-size: 1em;
 }
 
+.menu-option:link,
+.menu-option:visited,
+.menu-option:focus,
+.menu-option:hover,
+.menu-option:active {
+    color: #ebe8ea;
+}
+
+
 .menu-options:nth-child(odd){
-    background-color: #565a5d;
+    background-color: #3a2533;
 }
 
 .menu-options:nth-child(even){
-    background-color: #969a9d;
+    background-color: #5a394d;
 }

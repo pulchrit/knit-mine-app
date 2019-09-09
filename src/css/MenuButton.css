@@ -1,8 +1,9 @@
 .menu-button {
     position: relative;
-    background-color: transparent;
-    color: white;
-    border: 1px solid white;
+    border-radius: 3px;
+    background-color: #69435b;
+    color: #ebe8ea;
+    border: 1px solid #69435b;
     margin: 5px 5px 0 5px;
     padding: 5px 10px;
     width: 150px;

@@ -1,9 +1,11 @@
-import React from 'react';
-import TokenService from '../services/token-service';
-import {Link} from 'react-router-dom';
-import '../css/Menu.css';
+import React from 'react'
+import {Link} from 'react-router-dom'
+import '../css/Menu.css'
 
 const Menu = ({setShow, clickLogout, menuRoutesOptions}) => {
+
+    
+
     return (
         <ul className="menu" onClick={event => setShow(false)}>
             {menuRoutesOptions.map((menu, i) => 
@@ -11,7 +13,7 @@ const Menu = ({setShow, clickLogout, menuRoutesOptions}) => {
                     <Link 
                         to={menu.route} 
                         className="menu-option" 
-                        onClick={TokenService.hasAuthToken() ? clickLogout : null}
+                        onClick={(menu.option === 'Logout') ? clickLogout : null}
                     >
                         {menu.option}
                     </Link>

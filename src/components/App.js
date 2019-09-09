@@ -1,21 +1,21 @@
-import React from 'react';
-import {Route, Switch} from 'react-router-dom';
-import Header from './Header';
-import LandingPage from './LandingPage';
-import Login from './Login';
+import React from 'react'
+import {Route, Switch} from 'react-router-dom'
+import Header from './Header'
+import LandingPage from './LandingPage'
+import Login from './Login'
 import Register from './Register';
-import AddProjectPattern from './AddProjectPattern';
-import AddStitch from './AddStitch';
-import AddMyProject from './AddMyProject';
-import ProjectsStitchesPatterns from './ProjectsStitchesPatterns';
-import StitchItemDetails from './StitchItemDetails';
-import ProjectPatternItemDetails from './ProjectPatternItemDetails';
-import MyProjectPatternItemDetails from './MyProjectPatternItemDetails';
-import PublicOnlyRoute from '../customRoutes/PublicOnlyRoute';
-import PrivateRoute from '../customRoutes/PrivateRoute';
-import NotFoundPage from './NotFoundPage';
-import Footer from './Footer';
-import '../css/App.css';
+import AddProjectPattern from './AddProjectPattern'
+import AddStitch from './AddStitch'
+import AddMyProject from './AddMyProject'
+import ProjectsStitchesPatterns from './ProjectsStitchesPatterns'
+import StitchItemDetails from './StitchItemDetails'
+import ProjectPatternItemDetails from './ProjectPatternItemDetails'
+import MyProjectPatternItemDetails from './MyProjectPatternItemDetails'
+import PublicOnlyRoute from '../customRoutes/PublicOnlyRoute'
+import PrivateRoute from '../customRoutes/PrivateRoute'
+import NotFoundPage from './NotFoundPage'
+import Footer from './Footer'
+import '../css/App.css'
 
 export default class App extends React.Component {
   render() {
@@ -37,7 +37,7 @@ export default class App extends React.Component {
             component={Login}
           />
 
-          <PublicOnlyRoute
+          <Route
             path={'/register'}
             component={Register}
           />

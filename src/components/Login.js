@@ -1,9 +1,9 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAsterisk } from '@fortawesome/free-solid-svg-icons';
-import TokenService from '../services/token-service';
-import AuthApiService from '../services/auth-api-service';
-import '../css/Form.css';
+import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAsterisk } from '@fortawesome/free-solid-svg-icons'
+import TokenService from '../services/token-service'
+import AuthApiService from '../services/auth-api-service'
+import '../css/Form.css'
 
 export default class Login extends React.Component {
     state = {
@@ -40,13 +40,11 @@ export default class Login extends React.Component {
                 password: '',
             })
             // Save the authToken to session storage
-            // for us in future request headers to protected
+            // for use in future request headers to protected
             // endpoints.
             TokenService.saveAuthToken(res.authToken)
             // Go back to the page on which the user was before
             // logging in.
-            //this.props.history.push('/')
-            // redirect to my projects? not sure what makes most sense...
             this.props.history.push('/my-projects') 
         })
         .catch(res => {

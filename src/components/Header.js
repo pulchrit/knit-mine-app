@@ -1,7 +1,7 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
-import Nav from './Nav';
-import '../css/Header.css';
+import React from 'react'
+import {Link} from 'react-router-dom'
+import Nav from './Nav'
+import '../css/Header.css'
 
 const Header = () => {
 

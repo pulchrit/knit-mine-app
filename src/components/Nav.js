@@ -1,10 +1,10 @@
-import React from 'react';
-import Menu from './Menu';
-import MenuButton from './MenuButton';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
-import TokenService from '../services/token-service';
-import '../css/Nav.css';
+import React from 'react'
+import Menu from './Menu'
+import MenuButton from './MenuButton'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
+import TokenService from '../services/token-service'
+import '../css/Nav.css'
 
 export default class Nav extends React.Component {
 
@@ -179,7 +179,7 @@ export default class Nav extends React.Component {
                                     },
                                     {
                                         route: '/add-my-project',
-                                        option: 'Add My Project'
+                                        option: 'Add Project'
                                     }
                                 ]}
                             />

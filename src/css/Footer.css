@@ -1,21 +1,28 @@
 footer {
-    background-color: dimgray;
+    background-color: #69435b;
     position: fixed;
     left: 0;
     bottom: 0;
-    color: white;
+    color: #ebe8ea;
     width: 100%;
-    padding: 1%;
+    padding: 10px;
     text-align: center;
-    font-family: 'Crimson Text', serif;
-    font-size: 1.1em;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: .85em;
 }
 
 footer p {
     margin: 0;
 }
 
-footer a {
-    color: white;
+.footer-link:link,
+.footer-link:visited,
+.footer-link:focus,
+.footer-link:hover,
+.footer-link:active {
+    color: #ebe8ea;
     cursor: pointer;
 }
+
+
+

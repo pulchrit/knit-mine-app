@@ -1,7 +1,7 @@
-import React from 'react';
-import config from '../config';
-import TokenService from '../services/token-service';
-import '../css/ItemDetails.css';
+import React from 'react'
+import config from '../config'
+import TokenService from '../services/token-service'
+import '../css/ItemDetails.css'
 
 /* TO DO:  refactor ItemDetails to use for project patterns, stitches and my projects, 
 instead of having separate components for each. 
@@ -38,8 +38,7 @@ export default class ProjectPatternItemDetails extends React.Component {
             projectPattern: pattern
             })
         )
-        //.catch(this.setState)
-        .catch(res => { // does this work properly???
+        .catch(res => { 
             this.setState({error: res.error})
         })
     } 

@@ -1,9 +1,10 @@
-import React from 'react';
-import ListView from './ListView';
-import SearchAdd from './SearchAdd';
-import DataService from '../services/data-api-service';
+import React from 'react'
+import ListView from './ListView'
+import SearchAdd from './SearchAdd'
+import {withRouter} from 'react-router-dom'
+import DataService from '../services/data-api-service'
 
-export default class ProjectsStitchesPatterns extends React.Component {
+class ProjectsStitchesPatterns extends React.Component {
 
     state = {
         'my-projects': [],
@@ -20,7 +21,7 @@ export default class ProjectsStitchesPatterns extends React.Component {
     getRenderData = (currentPath) => {
         if (currentPath === '/my-projects') {
             return {
-                name: 'Add my project',
+                name: 'Add a project',
                 route: '/add-my-project',
                 searchCopy: 'Search my projects...',
                 listName: 'My Projects',
@@ -60,7 +61,7 @@ export default class ProjectsStitchesPatterns extends React.Component {
     }
 
     handleClearSearch = (event) => {
-        event.preventDefault()
+        event.preventDefault() //// Do I  need this?????
         this.setState({
             searchTermEntered: ''
         })
@@ -77,8 +78,26 @@ export default class ProjectsStitchesPatterns extends React.Component {
                     [pathName]: data,
                 })
             })
-            .catch(this.setState) 
+            .catch(res => { 
+                this.setState({error: res.error})
+            }) 
         )
+    }
+
+    // Using componentDidUpdate and withRouter to clear the searchTermEntered from state
+    // as users switch between routes (/stitch-patterns, /project-patterns, /my-projects).
+    // withRouter includes the props from the previous rendering. componentDidUpdate allows
+    // comparison between the current props and the previous props (with pathname being the 
+    // prop with which we are concerned). When the pathname has changed, then we reset the 
+    // searchTermEntered to an empty string (i.e., clear the search).
+    // Attribution: https://stackoverflow.com/questions/41911309/how-to-listen-to-route-changes-in-react-router-v4
+    // Attribution: https://reactjs.org/docs/react-component.html#componentdidupdate
+    componentDidUpdate(prevProps) {
+        if (this.props.location.pathname !== prevProps.location.pathname) {
+            this.setState({
+                searchTermEntered: ''
+            })
+        }
     }
 
 
@@ -112,3 +131,5 @@ export default class ProjectsStitchesPatterns extends React.Component {
         )
     }
 }
+
+export default withRouter(ProjectsStitchesPatterns)

@@ -21,27 +21,8 @@
 } 
 
 .fa-search {
-    color: gray;
+    color: #69435b;
     font-size: 1.5em;
-}
-
-
-.button a:link,
-.button a:visited,
-.button a:focus,
-.button a:hover,
-.button a:active {
-  color: white;
-  text-decoration: none;
-}
-
-.button {
-  background-color: gray;
-  border-radius: 3px;
-  border: none;
-  padding: 10px;
-  margin: 0 10px;
-  color: white;
 }
 
 @media only screen and (min-width: 750px) {

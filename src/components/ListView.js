@@ -1,6 +1,6 @@
-import React from 'react';
-import ListItem from './ListItem';
-import '../css/ListView.css';
+import React from 'react'
+import ListItem from './ListItem'
+import '../css/ListView.css'
 
 const ListView = ({data, searchTermEntered, listName, itemRoute}) => {
     

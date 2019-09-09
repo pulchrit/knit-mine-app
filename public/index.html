@@ -8,23 +8,26 @@
       name="description"
       content="Save your favorite knitting project and stitch patterns and post your own knitting projects with Knit Mine."
     />
-    <link rel="apple-touch-icon" href="logo192.png" />
+    
     <!-- Normalize css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" rel="stylesheet" type="text/css"/>
-    <link href="https://fonts.googleapis.com/css?family=Crimson+Text|DM+Serif+Text|Londrina+Shadow|Noto+Sans+JP&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Londrina+Sketch|Noto+Sans+JP&display=swap" rel="stylesheet">
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <!-- 
-      Replacing the default link to manifest.json, because it doesn't work correctly
-      when I build it an deploy it on now/zeit. 
-      Instead of this: 
-      <link rel="manifest" href="%PUBLIC_URL%/manifest.json" /> 
-      I'll use this: 
-    -->
-<!--     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" /> -->    
-    <link rel="manifest" href="manifest.json" /> 
+    <!-- Replacing the default link to manifest.json, because it doesn't work correctly
+      when I build it and deploy it on now/zeit. -->
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!-- <link rel="manifest" href="manifest.json" />  -->
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.

@@ -1,7 +1,7 @@
 .logo {
-  font-size: 4em;
+  font-size: 3.5em;
   letter-spacing: 3px;
-  font-family: 'Londrina Shadow', cursive; 
+  font-family: 'Londrina Sketch', cursive;
   line-height: .9;
 }
 .logo:link,
@@ -11,7 +11,7 @@
 .logo:active {
   text-decoration: none;
   cursor: pointer;
-  color: white;
+  color: #ebe8ea;
 }
 
 header {
@@ -22,11 +22,11 @@ header {
   z-index: 10;
   width: 100%;
   padding: 2%;
-  background-color: dimgray;
+  background-color: #69435b;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  font-family: 'Crimson Text', serif;
-  font-size: 1.1em;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1em;
 }

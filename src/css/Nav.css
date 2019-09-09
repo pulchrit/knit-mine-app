@@ -1,4 +1,4 @@
-/* burger menu based on: https://codesandbox.io/s/mq48rlj0pp */
+/* Burger menu based on: https://codesandbox.io/s/mq48rlj0pp */
 
 .nav {
     display: flex;
@@ -10,7 +10,7 @@
     align-self: flex-end;
     font-size: 2em;
     margin-right: 5px;
-    color: white;
+    color: #ebe8ea;
     cursor: pointer;
 }
 
@@ -29,14 +29,12 @@
 
 .button-and-menu {
     position: relative; 
-    
-
 }
 
 .nav a {
     margin: 0 5px;
     text-decoration: none;
-    color: white;
+    color: #ebe8ea;
     cursor: pointer;
 }
 

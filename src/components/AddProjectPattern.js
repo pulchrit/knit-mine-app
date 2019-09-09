@@ -1,9 +1,9 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAsterisk } from '@fortawesome/free-solid-svg-icons';
-import config from '../config';
-import TokenService from '../services/token-service';
-import '../css/Form.css';
+import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAsterisk } from '@fortawesome/free-solid-svg-icons'
+import config from '../config'
+import TokenService from '../services/token-service'
+import '../css/Form.css'
 
 export default class AddProjectPattern extends React.Component {
 

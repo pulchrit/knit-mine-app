@@ -1,5 +1,5 @@
-import React from 'react';
-import { withRouter } from 'react-router-dom';
+import React from 'react'
+import { withRouter } from 'react-router-dom'
 
 /* Attribution: https://stackoverflow.com/questions/36904185/react-router-scroll-to-top-on-every-transition */
 

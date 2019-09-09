@@ -1,8 +1,8 @@
-import React from 'react';
-import AuthApiService from '../services/auth-api-service';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAsterisk } from '@fortawesome/free-solid-svg-icons';
-import '../css/Form.css';
+import React from 'react'
+import AuthApiService from '../services/auth-api-service'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAsterisk } from '@fortawesome/free-solid-svg-icons'
+import '../css/Form.css'
 
 export default class Register extends React.Component {
     state = {

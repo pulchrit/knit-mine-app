@@ -5,7 +5,7 @@
     width: 100%;
     margin: 5% auto;
     padding: 5%;
-    background-color: #efefef;
+    border: 1px solid #ebe8ea;
     border-radius: 3px;
 }
 
@@ -17,7 +17,8 @@
 
 .list-item-subhead {
     text-align: center;
-    margin-top: 3%;
+    font-size: .9em;
+    margin: 10% 0;
 }
 
 .list-buttons {
@@ -26,20 +27,21 @@
     width: 100%;
 } 
   
-.button a:link,
-.button a:visited,
-.button a:focus,
-.button a:hover,
-.button a:active {
-    color: white;
+.list-button a:link,
+.list-button a:visited,
+.list-button a:focus,
+.list-button a:hover,
+.list-button a:active {
+    color: #69435b;
     text-decoration: none;
 }
   
-.button {
-    background-color: gray;
+.list-button {
+    background-color:  #ebe8ea;
     border-radius: 3px;
     border: none;
     padding: 10px;
     margin: 0 10px;
-    color: white;
+    color: #69435b;
+    width: 50%;
 } 

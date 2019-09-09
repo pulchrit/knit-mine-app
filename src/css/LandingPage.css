@@ -25,9 +25,8 @@
 
 .landing-page-subhead {
     margin: 2% 0;
-    font-family: 'DM Serif Text', serif;
     font-family: 'Crimson Text', serif;
-    font-size: 1.7em;
+    font-size: 1.65em;
     letter-spacing: 1px;
 }
 
@@ -37,14 +36,14 @@
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    width: 80%
+    width: 100%
 }
 
 .screen-shot {
     width: 75%;
     border-radius: 3px;
     margin: 10px;
-    box-shadow: 5px 5px 5px lightgrey;
+    box-shadow: 5px 5px 5px #cfb4c5;
 }
 
 .landing-page-li {
@@ -52,7 +51,7 @@
 }
 
 .landing-page-section {
-    background-color: #f2f3f3;
+    background-color: #ebe8ea;
     border-radius: 3px;
     padding: 5px 20px;
     margin: 20px 0;
@@ -66,8 +65,10 @@
 
 figure {
     display: flex;
+    margin: 10px;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
 @media only screen and (min-width: 750px) {
@@ -76,10 +77,14 @@ figure {
     }
 
     .copy {
-        width: 60%
+        width: 70%
     }
 
     patterns-projects-preview {
-        width: 40%;
+        width: 30%;
+    }
+
+    figure {
+        margin: 10px 0;
     }
 }

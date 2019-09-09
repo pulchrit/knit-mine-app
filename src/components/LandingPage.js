@@ -1,7 +1,7 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React from 'react'
+import {Link} from 'react-router-dom'
 import AddButton from './AddButton'
-import '../css/LandingPage.css';
+import '../css/LandingPage.css'
 
 const LandingPage = () => {
 
@@ -87,8 +87,8 @@ const LandingPage = () => {
                     <h2 className="landing-page-subhead">Save your own creations</h2>
 
                     <p>
-                        What kind of hat did you make for Jim's last birthday again? 
-                        You know you changed the needle size on Laura's scarf, but 
+                        What kind of hat did you make for Grandma's last birthday again? 
+                        You know you changed the needle size on your daughter's scarf, but 
                         you can't recall what you changed it to. Find the answers and 
                         keep a record of your beautiful work by saving your projects 
                         to Knit Mine.  
@@ -104,8 +104,8 @@ const LandingPage = () => {
                         <ul>
                         <li className="landing-page-li"> To get started {' '}
                         <Link to="/register">register</Link> {' '}
-                            and <Link to="/login">login</Link>. {' '} Then {' '}
-                            <Link to="/add-project">add one of your own projects</Link>.
+                            and <Link to="/login">login</Link>. </li>
+                        <li> Then {' '} <Link to="/add-project">add one of your own projects</Link>.
                         </li>
 
                         <li className="landing-page-li">Then you can {' '}
