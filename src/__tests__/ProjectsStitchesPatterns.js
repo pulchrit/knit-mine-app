@@ -40,12 +40,20 @@ it('renders without crashing', () => {
             path: '/my-projects'
         }
     }
+
+    // Help with providing proper data for withRouter:
+    // https://stackoverflow.com/questions/44204828/testing-react-component-enclosed-in-withrouter-preferably-using-jest-enzyme
+    const prevProps = {
+        location: {
+            pathname: "/my-projects"
+        }
+    }
   
     const div = document.createElement('div');
 
     ReactDOM.render(
       <BrowserRouter>
-        <ProjectsStitchesPatterns  
+        <ProjectsStitchesPatterns.WrappedComponent props={prevProps}
             data={state.MY_PROJECTS}
             match={props.match}
         />
