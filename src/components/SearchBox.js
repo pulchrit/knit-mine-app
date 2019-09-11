@@ -9,8 +9,7 @@ export default class SearchBox extends React.Component {
     render() {
 
         return (
-            <form className='search-form' onKeyPress={this.props.onKeyPress} >
-                
+            <form className='search-form' onSubmit={this.props.onSubmit} >
                 <label className="search-label" htmlFor="search-box">
                     <FontAwesomeIcon className='fa-search' icon={faSearch} />
                 </label>

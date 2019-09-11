@@ -12,6 +12,11 @@ export default class Login extends React.Component {
         error: null
     }
 
+    changeAccountNameAndRedirect = () => {
+        this.props.changeAccountName()
+        this.props.history.push('/') 
+    }
+
     handleSubmit = (event) => {
         event.preventDefault()
         
@@ -43,9 +48,9 @@ export default class Login extends React.Component {
             // for use in future request headers to protected
             // endpoints.
             TokenService.saveAuthToken(res.authToken)
-            // Go back to the page on which the user was before
-            // logging in.
-            this.props.history.push('/my-projects') 
+            // Change Account to My Account in the <Nav> menu and
+            // redirect to the landing page.
+            this.changeAccountNameAndRedirect()
         })
         .catch(res => {
             this.setState({error: res.error})

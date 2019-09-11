@@ -6,10 +6,15 @@
     border: 1px solid #69435b;
     margin: 5px 5px 0 5px;
     padding: 5px 10px;
-    width: 150px;
+    width: 160px;
 }
 
-.caret-icon {
+.nav-icon {
     margin-right: 10px;
-    color: white;
+    color: #ebe8ea;
+}
+
+.user {
+    margin-right: 0;
+    margin-left: 10px;
 }

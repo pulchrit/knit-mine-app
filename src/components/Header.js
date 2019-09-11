@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import Nav from './Nav'
 import '../css/Header.css'
 
-const Header = () => {
+const Header = ({accountName, changeAccountName}) => {
 
     return (
         <header role="banner">
@@ -12,7 +12,10 @@ const Header = () => {
                 Knit Mine
             </Link>
 
-            <Nav />
+            <Nav 
+                accountName={accountName} 
+                changeAccountName={changeAccountName}
+            />
 
         </header>
 

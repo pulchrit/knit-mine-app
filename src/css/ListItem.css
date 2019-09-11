@@ -34,6 +34,7 @@
 .list-button a:active {
     color: #69435b;
     text-decoration: none;
+    font-size: .9em;
 }
   
 .list-button {

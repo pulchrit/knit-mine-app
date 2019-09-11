@@ -24,6 +24,24 @@ const LandingPage = () => {
 
             <section className="landing-page-section">
 
+                
+                <section className="copy">
+                    <h2 className="landing-page-subhead demo">Try it out</h2>
+                    
+                    <p>
+                        <Link to="/login">Login</Link> {' '} with this demo user account, and you'll 
+                    have access to sample stitches, project patterns, and projects.
+                    </p>
+                </section>
+
+                <section className="patterns-projects-preview">
+                    <p className="demo-credentials"><span className="bold">Email:</span> demo@demo.com</p>
+                    <p className="demo-credentials"><span className="bold">Password:</span> demoUser23</p>
+                </section>
+            </section>
+
+            <section className="landing-page-section">
+
                 <section className="copy">
                     <h2 className="landing-page-subhead">Save project and stitch patterns</h2>
 

@@ -39,6 +39,29 @@
     width: 100%
 }
 
+.demo-section {
+    display: flex;
+    flex-direction: column;
+    background-color: #ebe8ea;
+    border-radius: 3px;
+    padding: 10px 20px 20px 20px;
+    margin: 20px 0;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.demo {
+    margin: 5px 0;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.demo-credentials {
+    margin: 0;
+}
+
 .screen-shot {
     width: 75%;
     border-radius: 3px;

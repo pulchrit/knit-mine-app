@@ -7,8 +7,41 @@
             "dest": "/static/$1"
         },
         {
+            "src": "^/favicon.ico", 
+            "dest": "/favicons/favicon.ico"
+        },
+        {
+            "src": "^/favicon-16x16.png", 
+            "dest": "/favicons/favicon-16x16.png"
+        },
+        {
+            "src": "^/android-chrome-192x192.png", 
+            "dest": "/favicons/android-chrome-192x192.png"
+        },
+        {
+            "src": "^/android-chrome-512x512.png", 
+            "dest": "/favicons/android-chrome-512x512.png"
+        },
+        {
+            "src": "^/mstile-150x150.png", 
+            "dest": "/favicons/mstile-150x150.png"
+        },
+        {
+            "src": "^/safari*", 
+            "dest": "/favicons/safari-pinned-tab.svg"
+        },
+        {
+            "src": "^/asset-manifest.json", 
+            "dest": "/asset-manifest.json"
+        },
+        {
+            "src": "^/manifest.json", 
+            "dest": "/manifest.json"
+        },
+        {
             "src": ".*",
             "dest": "/index.html"
         }
+        
     ]
 }

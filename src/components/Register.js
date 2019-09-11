@@ -1,5 +1,6 @@
 import React from 'react'
 import AuthApiService from '../services/auth-api-service'
+import TokenService from '../services/token-service'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAsterisk } from '@fortawesome/free-solid-svg-icons'
 import '../css/Form.css'
@@ -14,8 +15,9 @@ export default class Register extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
+        
         const { name, email, password } = this.state
-    
+
         // Reset error if there was one previously.
         this.setState({error: null})
     
@@ -46,9 +48,16 @@ export default class Register extends React.Component {
     }
 
     handleChangeName = (event) => {
-        this.setState({
-            name: event.target.value
-        })
+        
+        if (TokenService.hasAuthToken()) {
+            this.setState({
+                error: 'You are already logged in. Please logout to register a new user.'
+            })
+        } else {
+            this.setState({
+                name: event.target.value
+            })
+        }
     }
 
     handleChangeEmail = (event) => {

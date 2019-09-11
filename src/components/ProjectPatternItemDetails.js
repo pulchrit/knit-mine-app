@@ -48,9 +48,9 @@ export default class ProjectPatternItemDetails extends React.Component {
         const {projectPattern} = this.state
         const {error} = this.state
 
-        const image_url = projectPattern.image_url === ""
-        ? "https://via.placeholder.com/300/000000/FFFFFF?text=no+photo+uploaded"
-        : projectPattern.image_url
+        const image_url = !projectPattern.image_url
+                            ? "https://via.placeholder.com/300/ebe8ea/69435b?text=no+photo+uploaded"
+                            : projectPattern.image_url
 
         return (
 
@@ -59,7 +59,7 @@ export default class ProjectPatternItemDetails extends React.Component {
                     {/* If there is an error, render it, otherwise 'display' empty string. */}
                     {error ? <p className='error' role='alert'>{error}</p> : ''}
 
-                    <h2 className="details-subhead">{projectPattern.name}</h2>
+                    <h2 className="details-subhead">Project Pattern Details: {projectPattern.name}</h2>
                     <a className="details-img-a" target="_blank" rel="noopener noreferrer" href={projectPattern.url}>
                         <img src={image_url} className="thumbnail" alt={projectPattern.name} />
                     </a>

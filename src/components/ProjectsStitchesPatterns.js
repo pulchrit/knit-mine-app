@@ -53,15 +53,12 @@ class ProjectsStitchesPatterns extends React.Component {
         })
     }
 
-    //Attribution: https://github.com/christianalfoni/formsy-react/issues/360
-    onKeyPress = (event) => {
-        if (event.which === 13 /* Enter key */) {
-            event.preventDefault();
-          }
+    onSubmit = (event) => {
+        event.preventDefault()
     }
 
     handleClearSearch = (event) => {
-        event.preventDefault() //// Do I  need this?????
+        event.preventDefault() 
         this.setState({
             searchTermEntered: ''
         })
@@ -115,7 +112,7 @@ class ProjectsStitchesPatterns extends React.Component {
                     name={renderData.name} 
                     route={renderData.route} 
                     searchCopy={renderData.searchCopy}
-                    onKeyPress={this.onKeyPress} 
+                    onSubmit={this.onSubmit}
                     handleChangeSearchTermEntered={this.handleChangeSearchTermEntered}
                     searchTermEntered={this.state.searchTermEntered}
                     handleClearSearch={this.handleClearSearch}

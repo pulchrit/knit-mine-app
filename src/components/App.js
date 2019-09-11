@@ -1,5 +1,6 @@
 import React from 'react'
 import {Route, Switch} from 'react-router-dom'
+import TokenService from '../services/token-service'
 import Header from './Header'
 import LandingPage from './LandingPage'
 import Login from './Login'
@@ -11,19 +12,34 @@ import ProjectsStitchesPatterns from './ProjectsStitchesPatterns'
 import StitchItemDetails from './StitchItemDetails'
 import ProjectPatternItemDetails from './ProjectPatternItemDetails'
 import MyProjectPatternItemDetails from './MyProjectPatternItemDetails'
-import PublicOnlyRoute from '../customRoutes/PublicOnlyRoute'
 import PrivateRoute from '../customRoutes/PrivateRoute'
 import NotFoundPage from './NotFoundPage'
 import Footer from './Footer'
 import '../css/App.css'
 
 export default class App extends React.Component {
+
+  state = {
+    accountName: TokenService.hasAuthToken() ? "My Account" : "Account"
+  }
+
+  changeAccountName = () => {
+    this.setState({
+      accountName: TokenService.hasAuthToken() ? "My Account" : "Account"
+    })
+  }
+
   render() {
+
+    const {accountName} = this.state
   
     return (
       <main className="App">
         
-        <Header />
+        <Header 
+          accountName={accountName}
+          changeAccountName={this.changeAccountName} 
+        />
 
         <Switch>
           <Route 
@@ -32,9 +48,9 @@ export default class App extends React.Component {
             component={LandingPage}
           />
 
-          <PublicOnlyRoute
+          <Route
             path={'/login'}
-            component={Login}
+            render={(props) => <Login {...props} changeAccountName={this.changeAccountName} />}
           />
 
           <Route

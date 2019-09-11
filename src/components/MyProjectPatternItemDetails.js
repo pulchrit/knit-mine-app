@@ -52,8 +52,8 @@ export default class MyProjectPatternItemDetails extends React.Component {
 
         // Use placeholder image if user does not upload one.
         const image = !myProject.image
-            ? "https://via.placeholder.com/300/000000/FFFFFF?text=no+photo+uploaded"
-            : myProject.image
+                        ? "https://via.placeholder.com/300/ebe8ea/69435b?text=no+photo+uploaded"
+                        : myProject.image
 
         return (
 
@@ -62,7 +62,7 @@ export default class MyProjectPatternItemDetails extends React.Component {
                     {/* If there is an error, render it, otherwise 'display' empty string. */}
                     {error ? <p className='error' role='alert'>{error}</p> : ''}
 
-                    <h2 className="details-subhead">{myProject.name}</h2>
+                    <h2 className="details-subhead">My Project Details: {myProject.name}</h2>
                     <img src={image} className="details-thumbnail" alt={myProject.name} />
                 
                     <div className="details-copy">

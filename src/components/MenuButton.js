@@ -1,6 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons'
+import TokenService from '../services/token-service'
 import '../css/MenuButton.css'
 
 const MenuButton = ({name, setShow, show}) => {
@@ -12,10 +13,11 @@ const MenuButton = ({name, setShow, show}) => {
             onClick={e => setShow(!show)} 
         >
             {show 
-                ? <FontAwesomeIcon className='caret-icon' icon={faCaretUp} />
-                : <FontAwesomeIcon className='caret-icon' icon={faCaretDown} />
+                ? <FontAwesomeIcon className='nav-icon' icon={faCaretUp} />
+                : <FontAwesomeIcon className='nav-icon' icon={faCaretDown} />
             }
             {name}
+            {TokenService.hasAuthToken() && name === 'My Account' ? <FontAwesomeIcon className="nav-icon user" icon={faUser} /> : '' }
         </button>
     )
     

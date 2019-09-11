@@ -12,38 +12,47 @@ export default class Nav extends React.Component {
         showPatterns: false,
         showMyProjects: false,
         showMyAccount: false,
-        isExpanded: false
+        isExpanded: false,
     };
 
     handleBurgerToggle = (event) => {
         event.preventDefault();
         this.setState({
           isExpanded: !this.state.isExpanded
-        });
+        })
     }
 
     setShowPatterns = (showPatterns) => {
         this.setState({
             showPatterns
-        });
+        })
     } 
 
     setShowMyAccount = (showMyAccount) => {
         this.setState({
             showMyAccount
-        });
+        })
     } 
 
     setShowMyProjects = (showMyProjects) => {
         this.setState({
             showMyProjects
-        });
+        })
     }
 
     handleLogoutClick = (event) => {
         event.stopPropagation()
         TokenService.clearAuthToken()
         this.setShowMyAccount(false)
+        this.props.changeAccountName()
+    }
+
+    handleToggleSetShowAndBurger = (setShow) => {
+        setShow(false)
+        this.setState({
+            isExpanded: !this.state.isExpanded
+        })
+
     }
     
     passLogoutRouteOption = () => {
@@ -54,7 +63,7 @@ export default class Nav extends React.Component {
                 }
         )
     }
-    
+
     passLoginRouteOption = () => {
         return (
             {
@@ -70,8 +79,7 @@ export default class Nav extends React.Component {
                                         ? this.passLogoutRouteOption()
                                         : this.passLoginRouteOption()
         
-
-        const { isExpanded } = this.state;
+        const { isExpanded } = this.state
 
         return (
             <nav role="navigation" className="nav">
@@ -104,7 +112,7 @@ export default class Nav extends React.Component {
                         
                     >
                         <MenuButton 
-                            name="My Account"
+                            name={this.props.accountName}
                             setShow={this.setShowMyAccount}
                             show={this.state.showMyAccount}
                         />
@@ -114,7 +122,9 @@ export default class Nav extends React.Component {
                         {this.state.showMyAccount && 
                             <Menu 
                                 setShow={this.setShowMyAccount}
+                                toggleSetShowAndBurger={this.handleToggleSetShowAndBurger}
                                 clickLogout={this.handleLogoutClick}
+                                handleBurgerToggle={this.handleBurgerToggle}
                                 menuRoutesOptions={[
                                     menuRouteOptionsLogInOut,
                                     {
@@ -138,6 +148,7 @@ export default class Nav extends React.Component {
                         {this.state.showPatterns &&
                             <Menu 
                                 setShow={this.setShowPatterns}
+                                toggleSetShowAndBurger={this.handleToggleSetShowAndBurger}
                                 menuRoutesOptions={[
                                     {
                                         route: '/stitch-patterns',
@@ -172,6 +183,7 @@ export default class Nav extends React.Component {
                         {this.state.showMyProjects && 
                             <Menu 
                                 setShow={this.setShowMyProjects}
+                                toggleSetShowAndBurger={this.handleToggleSetShowAndBurger}
                                 menuRoutesOptions={[
                                     {
                                         route: '/my-projects',

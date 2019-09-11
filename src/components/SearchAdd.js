@@ -6,7 +6,7 @@ import '../css/SearchAdd.css'
 const SearchAdd = ({name, 
                     route, 
                     searchCopy, 
-                    onKeyPress, 
+                    onSubmit,
                     handleClearSearch,
                     handleChangeSearchTermEntered, 
                     searchTermEntered}) => {
@@ -15,7 +15,7 @@ const SearchAdd = ({name,
         <section className="search-add-section">
             <SearchBox 
                 searchCopy={searchCopy}
-                onKeyPress={onKeyPress}
+                onSubmit={onSubmit}
                 handleChangeSearchTermEntered={handleChangeSearchTermEntered}
                 searchTermEntered={searchTermEntered}
                 handleClearSearch={handleClearSearch}

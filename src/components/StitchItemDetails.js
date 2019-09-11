@@ -48,8 +48,8 @@ export default class StitchItemDetails extends React.Component {
         const {stitch} = this.state
         const {error} = this.state
 
-        const image_url = stitch.image_url === ""
-                            ? "https://via.placeholder.com/300/000000/FFFFFF?text=no+photo+uploaded"
+        const image_url = !stitch.image_url
+                            ? "https://via.placeholder.com/300/ebe8ea/69435b?text=no+photo+uploaded"
                             : stitch.image_url
         return (
                 
@@ -58,7 +58,7 @@ export default class StitchItemDetails extends React.Component {
                     {/* If there is an error, render it, otherwise 'display' empty string. */}
                     {error ? <p className='error' role='alert'>{error}</p> : ''}
                     
-                    <h2 className="details-subhead">{stitch.name}</h2>
+                    <h2 className="details-subhead">Stitch Details: {stitch.name}</h2>
                     <a className="details-img-a" target="_blank" rel="noopener noreferrer" href={stitch.url}>                        
                         <img src={image_url} className="thumbnail" alt={stitch.name}/>
                     </a>
