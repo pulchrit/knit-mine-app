@@ -3,10 +3,9 @@
 
 ## Live app: [https://knit-mine-app.now.sh/](https://knit-mine-app.now.sh/)
 
-![Knit Mine My Projects](https://github.com/pulchrit/knit-mine-app/blob/master/readmeImages/myProjects.png | width=200)
-<img src="https://github.com/pulchrit/knit-mine-app/blob/master/readmeImages/myProjects.png" width="200" />
-![Knit Mine StitchPatterns](https://github.com/pulchrit/knit-mine-app/blob/master/readmeImages/stitchPatterns.png)
-![Knit Mine Project Patterns](https://github.com/pulchrit/knit-mine-app/blob/master/readmeImages/projectPatterns.png)
+<img src="https://github.com/pulchrit/knit-mine-app/blob/master/readmeImages/myProjects.png" alt="My Projects page" width="900" />
+<img src="https://github.com/pulchrit/knit-mine-app/blob/master/readmeImages/stitchPatterns.png" alt="Stitch Patterns page" width="900" />
+<img src="https://github.com/pulchrit/knit-mine-app/blob/master/readmeImages/projectPatterns.png" alt="Project Patterns page" width="900" />
 
 ## Summary: 
 Store knitting project and stitch patterns and post your own knit projects in Knit Mine. 
