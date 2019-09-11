@@ -15,6 +15,7 @@ A stitch pattern contains instructions for knitting a particular stitch—like d
 
 <p>
   <img src="https://github.com/pulchrit/knit-mine-app/blob/master/readmeImages/stitchPatterns.png" alt="Stitch Patterns page" width="400" />
+  <span>    </span>
   <img src="https://github.com/pulchrit/knit-mine-app/blob/master/readmeImages/projectPatterns.png" alt="Project Patterns page" width="400" />
 </p>
   
