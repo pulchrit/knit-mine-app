@@ -1,68 +1,35 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Knit Mine App
 
-In the project directory, you can run:
+## Live app: [https://knit-mine-app.now.sh/](https://knit-mine-app.now.sh/)
 
-### `npm start`
+![Knit Mine landing page](https://github.com/pulchrit/knit-mine-app/blob/master/readmeImages/myProjects.png)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Summary: 
+Store knitting project and stitch patterns and post your own knit projects in Knit Mine. 
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### Save project and stitch patterns
+Having trouble finding that daisy stitch pattern or that beautiful lace scarf pattern in your long list of knitting bookmarks? Save those patterns in Knit Mine and you can easily browse or search for them.
 
-### `npm test`
+A project pattern contains instructions for knitting a particular thing—like a scarf, hat, or sweater. The project pattern lives on another website and you store reference to it in Knit Mine.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+A stitch pattern contains instructions for knitting a particular stitch—like daisy stitch or stockinette stitch. The stitch pattern also lives on another site and you store reference to it in Knit Mine.
 
-### `npm run build`
+### Save your own creations
+What kind of hat did you make for Grandma's last birthday again? You know you changed the needle size on your daughter's scarf, but you can't recall what you changed it to. Find the answers and keep a record of your beautiful work by saving your projects to Knit Mine.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+You can save information about projects you’ve made and upload a photo of the finished piece. Include information about the yarn, needle size, who you made it for, and which project or stitch patterns you used.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+- To get started register and login.
+- Then add a project pattern, stitch pattern, or one of your own projects.
+- Then you can view all of your stitches, project patterns, and projects on Knit Mine.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Technology used
+- Client: React, React Router, Create React App, Now/Zeit, Jest
+- Server: Node.js, Express, PostgreSQL, Knex, JSON Web Token Authorization, Postgrater CLI, XSS, UUID, Heroku, Mocha, Chai, Supertest
+- AWS S3 for user uploads
 
-### `npm run eject`
+## API Documentation: [Knit Mine API](https://github.com/pulchrit/knit-mine-api/blob/master/README.md)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
