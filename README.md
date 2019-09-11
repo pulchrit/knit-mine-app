@@ -14,8 +14,8 @@ A project pattern contains instructions for knitting a particular thing—like a
 A stitch pattern contains instructions for knitting a particular stitch—like daisy stitch or stockinette stitch. The stitch pattern also lives on another site and you store reference to it in Knit Mine.
 
 <p>
-  <img src="https://github.com/pulchrit/knit-mine-app/blob/master/readmeImages/stitchPatterns.png" alt="Stitch Patterns page" width="500" />
-  <img src="https://github.com/pulchrit/knit-mine-app/blob/master/readmeImages/projectPatterns.png" alt="Project Patterns page" width="500" />
+  <img src="https://github.com/pulchrit/knit-mine-app/blob/master/readmeImages/stitchPatterns.png" alt="Stitch Patterns page" width="400" />
+  <img src="https://github.com/pulchrit/knit-mine-app/blob/master/readmeImages/projectPatterns.png" alt="Project Patterns page" width="400" />
 </p>
   
 ### Save your own creations
@@ -23,7 +23,7 @@ What kind of hat did you make for Grandma's last birthday again? You know you ch
 
 You can save information about projects you’ve made and upload a photo of the finished piece. Include information about the yarn, needle size, who you made it for, and which project or stitch patterns you used.
 
-<img src="https://github.com/pulchrit/knit-mine-app/blob/master/readmeImages/myProjects.png" alt="My Projects page" width="500" />
+<img src="https://github.com/pulchrit/knit-mine-app/blob/master/readmeImages/myProjects.png" alt="My Projects page" width="400" />
 
 - To get started register and login.
 - Then add a project pattern, stitch pattern, or one of your own projects.
