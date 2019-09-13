@@ -16,6 +16,18 @@
       "src": "/favicons/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src": "/favicons/safari-pinned-tab.svg",
+      "type": "image/svg"
+    },
+    {
+      "src": "/favicons/apple-touch-icon.png",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicons/mstile-150x150.png",
+      "type": "image/png"
     }
   ],
   "start_url": ".",
